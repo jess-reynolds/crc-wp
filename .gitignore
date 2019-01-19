@@ -1,2 +1,6 @@
 
 node_modules/
+
+assets/styles/style\.css
+
+*.map
