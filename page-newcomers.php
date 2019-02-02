@@ -16,7 +16,7 @@
                     <div class="cell shrink nav__link"><a href="/shop">Shop</a></div>
                 </div>
             </div>
-            <div class="cell small-2 nav__link">
+            <div class="cell small-3 nav__link">
                 <div style="text-align: right">
                     <a href="/login">Sign in</a>
                 </div>
@@ -32,13 +32,13 @@
 
 </section>
 
-<div class="home__heading">
-    We were all n00bs once.
+<div class="faq__heading">
+    We all start somewhere.
 </div>
 
 <div class="grid-container">
     <div class="grid-x">
-        <div class="cell home__intro">
+        <div class="cell faq__intro">
             <div>
                 This page helps new and prospective members by demystifying cycling clubs, explaining the Condors'
                 ethos, and
@@ -54,7 +54,7 @@
     </div>
 
     <div class="grid-x">
-        <div class="cell home__intro">
+        <div class="cell faq__intro">
             <a type="button" class="button red button__ride" href="/membership">Ride with us</a>
         </div>
     </div>
