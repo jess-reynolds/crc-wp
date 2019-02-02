@@ -2,33 +2,29 @@
   &__head {
     &--hill {
       position: absolute;
-      transform: skewY(-11deg);
+      transform: skewY(-11deg) translateY(-50%);
       background-color: #e86eb2;
       width: 100%;
-      height: 500px;
-      transform-origin: 0;
+      height: 700px;
+      transform-origin: center;
       overflow: hidden;
     }
     &--container {
       position: relative;
       width: 100%;
-      height: 500px;
+      height: 400px;
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: min-content auto;
     }
 
     &--inside {
-      margin-top: -7%;
       display: flex;
       justify-content: center;
-      align-items: center;
     }
 
     &--text {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 2fr 3fr;
+      margin-top: 70px;
 
       h1 {
         font-family: "Work Sans", sans-serif;
