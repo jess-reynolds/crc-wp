@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
+<div class="faq__head--bike"></div>
 <div class="faq__head--hill"></div>
+<img class="faq__head--bike" src="http://condors1.local/wp-content/themes/crc-wp/assets/images/bike.png" />
 <section class="faq__head--container">
     <div class="faq__head--header">
         <div class="grid-x nav__bar">
