@@ -1,0 +1,25 @@
+.footer {
+  background-color: rgb(68, 68, 68);
+  padding: 1em;
+  color: white;
+  font-size: 0.8em;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  &__link {
+    color: white;
+    padding: 0 1em;
+    font-family: "Work Sans", sans-serif;
+  }
+
+  a {
+    color: white;
+    text-decoration: underline;
+
+    &:hover {
+        color: rgb(255, 187, 224);
+    }
+  }
+}

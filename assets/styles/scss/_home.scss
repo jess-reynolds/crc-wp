@@ -1,0 +1,132 @@
+.home {
+  &__hero {
+    &--container {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: linear-gradient(
+          rgba(232, 110, 178, 0.72),
+          rgba(100, 35, 109, 0.72)
+        ),
+        linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
+        url("http://condors1.local/wp-content/uploads/2019/02/main.jpg");
+      background-color: white;
+      background-blend-mode: multiply, luminosity, luminosity;
+      background-size: cover;
+
+      width: 100%;
+      height: 50vh;
+
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: min-content auto;
+    }
+
+    &--inside {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--text {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: min-content min-content;
+
+      img {
+        margin: 0 auto;
+        width: 70%;
+      }
+
+      h1 {
+        font-family: "Work Sans", sans-serif;
+        font-size: 5em;
+        font-weight: 600;
+        letter-spacing: -0.05em;
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+      }
+      color: white;
+    }
+  }
+
+  &__heading {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    padding: 2em 2em 0 2em;
+    text-align: center;
+    letter-spacing: -0.05em;
+    color: rgb(73, 73, 73);
+  }
+
+  &__intro {
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 1em;
+    line-height: 2em;
+    padding: 2em 2em 1em 2em;
+    text-align: center;
+    color: rgb(73, 73, 73);
+  }
+
+  &__banner {
+    &--container {
+      margin: 2em 0;
+      padding: 2em;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-blend-mode: multiply;
+      background-size: cover;
+
+      width: 100vw;
+
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: min-content auto;
+    }
+
+    &--inside {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--text {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: min-content min-content;
+
+      img {
+        margin: 0 auto;
+        width: 70%;
+      }
+
+      h1 {
+        text-align: center;
+        font-family: "Work Sans", sans-serif;
+        font-size: 3.5em;
+        font-weight: 700;
+        letter-spacing: -0.05em;
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      p {
+        font-family: Georgia, Times, "Times New Roman", serif;
+        font-size: 1em;
+        text-align: center;
+      }
+
+      a {
+        font-family: Georgia, Times, "Times New Roman", serif;
+        font-size: 1em;
+        letter-spacing: -0.02em;
+        text-align: center;
+        font-style: italic;
+        color: white;
+        text-decoration: underline;
+      }
+
+      color: white;
+    }
+  }
+}
