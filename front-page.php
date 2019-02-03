@@ -43,20 +43,15 @@ get_header(); ?>
 </div>
 
 <div class="grid-container">
-	<div class="grid-x">
-		<div class="cell home__intro">
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<?php the_content(); ?>
-			<?php endwhile; endif; ?>
-		</div>
-	</div>
-
-	<div class="grid-x">
-		<div class="cell home__intro">
-			<a type="button" class="button red button__ride" href="/membership">Ride with us</a>
-		</div>
+	<div class="cell home__intro">
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<?php the_content(); ?>
+		<?php endwhile; endif; ?>
+		<a type="button" class="button red button__ride" href="/membership">Ride with us</a>
 	</div>
 </div>
+
+
 
 <section class="home__banner--container" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)),
         url('<?php bloginfo('template_url'); ?>/assets/images/rides.jpg');">

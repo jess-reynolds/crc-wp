@@ -61,12 +61,15 @@
   }
 
   &__intro {
-    font-family: Georgia, Times, "Times New Roman", serif;
-    font-size: 1em;
-    line-height: 2em;
-    padding: 2em 1em 1em 1em;
     text-align: center;
-    color: rgb(73, 73, 73);
+    p {
+      font-family: Georgia, Times, "Times New Roman", serif;
+      font-size: 1em;
+      line-height: 2em;
+      padding: 2em 1em 1em 1em;
+      text-align: center;
+      color: rgb(73, 73, 73);
+    }
   }
 
   &__banner {
