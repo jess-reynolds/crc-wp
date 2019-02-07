@@ -9,7 +9,7 @@
  
 get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<section class="home__hero--container" style="linear-gradient(rgba(232, 110, 178, 0.72), rgba(100, 35, 109, 0.72)), linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url('<?php bloginfo('template_url'); ?>/assets/images/main.jpg');">
+<section class="home__hero--container" style="background-image: linear-gradient(rgba(232, 110, 178, 0.72), rgba(100, 35, 109, 0.72)), linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url('<?php echo get_post_meta($post->ID, "home_hero", true); ?>')">
 	<div class="home__hero--header">
 		<div class="grid-x nav__bar">
 			<div class="cell auto">
@@ -47,7 +47,9 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<p>
 			<?php echo get_post_meta($post->ID, "home_intro", true); ?>
 		</p>
-		<a type="button" class="button red button__ride" href="/membership">Ride with us</a>
+		<a type="button" class="button red button__ride" href="<?php echo get_post_meta($post->ID, "home_action_link", true); ?>">
+			<?php echo get_post_meta($post->ID, "home_action_title", true); ?>
+		</a>
 	</div>
 </div>
 

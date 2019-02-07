@@ -36,8 +36,8 @@ function crc_register_faq_fields()
         'type'       => 'group',
         'options'     => array(
             'group_title'   => 'Question {#}',
-            'closed'        => true,  // Repeater fields closed by default - neat & compact.
-            'sortable'      => true,  // Allow changing the order of repeated groups.
+            'closed'        => true,
+            'sortable'      => true,
         ),
         
     ));
@@ -85,6 +85,25 @@ function crc_register_home_fields()
         'id'         => $prefix . 'intro',
         'type'       => 'textarea',
     ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Action title', 'cmb2'),
+        'id'         => $prefix . 'action_title',
+        'type'       => 'text',
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Action link', 'cmb2'),
+        'id'         => $prefix . 'action_link',
+        'type'       => 'text',
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Hero image', 'cmb2'),
+        'id'         => $prefix . 'hero',
+        'type'       => 'file',
+    ));
+    
     
     $group_field_id = $fields->add_field(array(
         'name'       => esc_html__('Banners', 'cmb2'),
@@ -92,8 +111,8 @@ function crc_register_home_fields()
         'type'       => 'group',
         'options'     => array(
             'group_title'   => 'Banner {#}',
-            'closed'        => true,  // Repeater fields closed by default - neat & compact.
-            'sortable'      => true,  // Allow changing the order of repeated groups.
+            'closed'        => true,
+            'sortable'      => true,
         ),
     ));
     
