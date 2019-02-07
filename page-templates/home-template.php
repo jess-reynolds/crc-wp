@@ -1,13 +1,13 @@
 <?php
 /**
- * Template Name: Front Page Template
+ * Template Name: Home Template
  *
  * @package WordPress
  * @subpackage Twenty_Seventeen
  * @since 1.0
  */
  
-get_header(); ?>
+get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <section class="home__hero--container" style="linear-gradient(rgba(232, 110, 178, 0.72), rgba(100, 35, 109, 0.72)), linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url('<?php bloginfo('template_url'); ?>/assets/images/main.jpg');">
 	<div class="home__hero--header">
@@ -39,52 +39,55 @@ get_header(); ?>
 </section>
 
 <div class="home__heading">
-	We like riding bicycles.
+	<?php echo get_post_meta($post->ID, "home_headline", true); ?>
 </div>
 
 <div class="grid-container">
 	<div class="cell home__intro">
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<?php the_content(); ?>
-		<?php endwhile; endif; ?>
+		<p>
+			<?php echo get_post_meta($post->ID, "home_intro", true); ?>
+		</p>
 		<a type="button" class="button red button__ride" href="/membership">Ride with us</a>
 	</div>
 </div>
 
 
+<?php
+    $banners = get_post_meta($post->ID, "home_banners", true);
+    foreach ((array) $banners as $key => $entry) {
+        $title = $blurb = $link = $image = '';
+        if (isset($entry['title'])) {
+            $title = esc_html($entry['title']);
+        }
+        
+        if (isset($entry['blurb'])) {
+            $blurb = esc_html($entry['blurb']);
+        }
+
+        if (isset($entry['link'])) {
+            $link = esc_html($entry['link']);
+        }
+        
+        if (isset($entry['image'])) {
+            $image = esc_html($entry['image']);
+        } ?>
 
 <section class="home__banner--container" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)),
-        url('<?php bloginfo('template_url'); ?>/assets/images/rides.jpg');">
+        url('<?php echo $image; ?>');">
 	<div class="home__banner--inside">
 		<div class="home__banner--text">
-			<h1>Rides</h1>
-			<p>During Spring and Summer there are regular club rides to suit any rider every Tuesday, Thursday and on weekends.</p>
-			<a href="/rides">Read more</a>
+			<h1>
+				<?php echo $title; ?>
+			</h1>
+			<p>
+				<?php echo $blurb; ?>
+			</p>
+			<a href="<?php echo $link; ?>">Read more</a>
 		</div>
 	</div>
 </section>
 
-<section class="home__banner--container" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)),
-        url('<?php bloginfo('template_url'); ?>/assets/images/racing.jpg');">
-	<div class="home__banner--inside">
-		<div class="home__banner--text">
-			<h1>Racing</h1>
-			<p>We have thriving men's and women's race teams and are always glad to assist new racers.</p>
-			<a href="/racing">Read more</a>
-		</div>
-	</div>
-</section>
+<?php
+    } ?>
 
-<section class="home__banner--container" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)),
-        url('<?php bloginfo('template_url'); ?>/assets/images/shop.jpg');">
-	<div class="home__banner--inside">
-		<div class="home__banner--text">
-			<h1>Shop</h1>
-			<p>We have thriving men's and women's race teams and are always glad to assist new racers.</p>
-			<a href="/racing">Read more</a>
-		</div>
-	</div>
-</section>
-
-
-<?php get_footer();
+<?php endwhile; endif; get_footer();

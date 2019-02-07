@@ -39,7 +39,7 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 <div class="grid-container">
     <div class="grid-x">
         <div class="cell faq__intro">
-            <p><?php echo get_post_meta($post->ID, "qanda_intro", true); ?>
+            <p><?php echo get_post_meta($post->ID, "faq_intro", true); ?>
             </p>
             <img title="Home" src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
         </div>
@@ -50,7 +50,7 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 <div class="faq__question--wrap">
 
     <?php
-    $questions = get_post_meta($post->ID, "qanda_qanda", true);
+    $questions = get_post_meta($post->ID, "faq_faq", true);
     $even = false;
     foreach ((array) $questions as $key => $entry) {
         $even = !$even;
