@@ -13,14 +13,9 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<div class="home__hero--header">
 		<div class="grid-x nav__bar">
 			<div class="cell auto">
-				<div class="grid-x">
-					<div class="cell shrink nav__link"><a href="/"><img title="Home" src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" /></a></div>
-					<div class="cell shrink nav__link"><a href="/newcomers">Newcomers</a></div>
-					<div class="cell shrink nav__link"><a href="/club">Club</a></div>
-					<div class="cell shrink nav__link"><a href="/rides">Rides</a></div>
-					<div class="cell shrink nav__link"><a href="/racing">Racing</a></div>
-					<div class="cell shrink nav__link"><a href="/shop">Shop</a></div>
-				</div>
+
+				<?php wp_nav_menu(array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'grid-x nav__container' )); ?>
+
 			</div>
 			<div class="cell small-2 nav__link">
 				<div style="text-align: right">

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Q&A template
+ * Template Name: FAQ template
  *
  * @package WordPress
  * @subpackage Twenty_Seventeen
@@ -32,7 +32,9 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
         </div>
     </div>
     <div class="faq__head--text">
-        <h1>Your first ride</h1>
+        <h1>
+            <?php the_title(); ?>
+        </h1>
     </div>
 </section>
 
