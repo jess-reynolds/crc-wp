@@ -53,14 +53,13 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
         <div class="boxes__box--container">
             <img class="boxes__box--image" src="<?php echo $entry['image'] ?>" />
-            <div class="boxes__box--lower">
-                <div class="boxes__box--title"><?php echo $entry['title'] ?>
-                </div>
-                <div class="boxes__box--text"><?php echo $entry['blurb'] ?>
-                </div>
-                <a class="boxes__box--link" href="<?php echo $entry['link']?>">Read
-                    more</a>
+            <div class="boxes__box--title"><?php echo $entry['title'] ?>
             </div>
+            <div class="boxes__box--text"><?php echo $entry['blurb'] ?>
+            </div>
+            <a class="boxes__box--link" href="<?php echo $entry['link']?>">Read
+                more</a>
+
         </div>
         <?php
     } ?>
