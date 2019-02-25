@@ -16,7 +16,12 @@
       grid-template-rows: min-content auto;
     }
 
+    &--header {
+      grid-area: 1 / 1 / 1 / 1;
+    }
+
     &--inside {
+      grid-area: 1 / 1 / span 2 / 1;
       display: flex;
       justify-content: center;
       align-items: center;

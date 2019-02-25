@@ -11,14 +11,10 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <section class="home__hero--container" style="background-image: linear-gradient(rgba(232, 110, 178, 0.72), rgba(100, 35, 109, 0.72)), linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url('<?php echo get_post_meta($post->ID, "home_hero", true); ?>')">
 	<div class="home__hero--header">
-		<div class="grid-x nav__bar">
-			<div class="cell auto">
-
-				<?php wp_nav_menu(array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'grid-x nav__container' )); ?>
-
-			</div>
-			<div class="cell small-2 nav__link">
-				<div style="text-align: right">
+		<div class="nav__bar">
+			<?php wp_nav_menu(array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav__container' )); ?>
+			<div class="menu-item">
+				<div>
 					<a href="/login">Sign in</a>
 				</div>
 			</div>
@@ -30,15 +26,13 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<h1>condors</h1>
 		</div>
 	</div>
-
 </section>
-
-<div class="home__heading">
-	<?php echo get_post_meta($post->ID, "home_headline", true); ?>
-</div>
 
 <div class="grid-container">
 	<div class="cell home__intro">
+		<div class="home__heading">
+			<?php echo get_post_meta($post->ID, "home_headline", true); ?>
+		</div>
 		<p>
 			<?php echo get_post_meta($post->ID, "home_intro", true); ?>
 		</p>

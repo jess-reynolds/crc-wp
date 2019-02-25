@@ -13,19 +13,10 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 <img class="faq__head--bike" src="http://condors1.local/wp-content/themes/crc-wp/assets/images/bike.png" />
 <section class="faq__head--container">
     <div class="faq__head--header">
-        <div class="grid-x nav__bar">
-            <div class="cell auto">
-                <div class="grid-x">
-                    <div class="cell shrink nav__link"><a href="/"><img title="Home" src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" /></a></div>
-                    <div class="cell shrink nav__link"><a href="/newcomers">Newcomers</a></div>
-                    <div class="cell shrink nav__link"><a href="/club">Club</a></div>
-                    <div class="cell shrink nav__link"><a href="/rides">Rides</a></div>
-                    <div class="cell shrink nav__link"><a href="/racing">Racing</a></div>
-                    <div class="cell shrink nav__link"><a href="/shop">Shop</a></div>
-                </div>
-            </div>
-            <div class="cell small-3 nav__link">
-                <div style="text-align: right">
+        <div class="nav__bar">
+            <?php wp_nav_menu(array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav__container' )); ?>
+            <div class="menu-item">
+                <div>
                     <a href="/login">Sign in</a>
                 </div>
             </div>

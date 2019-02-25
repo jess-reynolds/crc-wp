@@ -61,6 +61,74 @@ function crc_register_faq_fields()
     ));
 }
 
+add_action('cmb2_admin_init', 'crc_register_boxes_fields');
+
+function crc_register_boxes_fields()
+{
+    $prefix = 'boxes_';
+
+    $fields = new_cmb2_box(array(
+        'id'            => $prefix . 'metabox',
+        'title'         => esc_html__('Data', 'cmb2'),
+        'object_types'  => array( 'page' ),
+        'show_on'       => array( 'key' => 'page-template', 'value' =>  'page-templates/boxes-template.php' ),
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Hero image', 'cmb2'),
+        'id'         => $prefix . 'hero',
+        'type'       => 'file',
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Headline', 'cmb2'),
+        'id'         => $prefix . 'headline',
+        'type'       => 'text',
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Introduction', 'cmb2'),
+        'id'         => $prefix . 'intro',
+        'type'       => 'textarea',
+    ));
+
+    $group_field_id = $fields->add_field(array(
+        'name'       => esc_html__('Boxes', 'cmb2'),
+        'id'         => $prefix . 'boxes',
+        'type'       => 'group',
+        'options'     => array(
+            'group_title'   => 'Box {#}',
+            'closed'        => true,
+            'sortable'      => true,
+        ),
+        
+    ));
+    
+    $fields->add_group_field($group_field_id, array(
+        'name' => 'Title',
+        'id'   => 'title',
+        'type' => 'text',
+    ));
+    
+    $fields->add_group_field($group_field_id, array(
+        'name' => 'Blurb',
+        'id'   => 'blurb',
+        'type' => 'textarea',
+    ));
+    
+    $fields->add_group_field($group_field_id, array(
+        'name' => 'Image',
+        'id'   => 'image',
+        'type' => 'file',
+    ));
+
+    $fields->add_group_field($group_field_id, array(
+        'name' => 'Link',
+        'id'   => 'link',
+        'type' => 'text',
+    ));
+}
+
 add_action('cmb2_admin_init', 'crc_register_home_fields');
 
 function crc_register_home_fields()
