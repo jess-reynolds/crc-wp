@@ -10,7 +10,7 @@
 get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <div class="faq__head--hill"></div>
-<img class="faq__head--bike" src="http://condors1.local/wp-content/themes/crc-wp/assets/images/bike.png" />
+<img class="faq__head--bike" src="<?php bloginfo('template_url'); ?>/assets/images/bike.png" />
 <section class="faq__head--container">
     <div class="faq__head--header">
         <div class="nav__bar">

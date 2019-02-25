@@ -45,25 +45,36 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 </div>
 
 <div class="boxes__wrap">
-    <?php
+    <div class="boxes__container">
+        <?php
     $questions = get_post_meta($post->ID, "boxes_boxes", true);
     foreach ((array) $questions as $key => $entry) {
         ?>
 
-    <div class="boxes__box--container">
-        <img class="boxes__box--image" src="<?php echo $entry['image'] ?>" />
-        <div class="boxes__box--lower">
-            <div class="boxes__box--title"><?php echo $entry['title'] ?>
+        <div class="boxes__box--container">
+            <img class="boxes__box--image" src="<?php echo $entry['image'] ?>" />
+            <div class="boxes__box--lower">
+                <div class="boxes__box--title"><?php echo $entry['title'] ?>
+                </div>
+                <div class="boxes__box--text"><?php echo $entry['blurb'] ?>
+                </div>
+                <a class="boxes__box--link" href="<?php echo $entry['link']?>">Read
+                    more</a>
             </div>
-            <div class="boxes__box--text"><?php echo $entry['blurb'] ?>
-            </div>
-            <a class="boxes__box--link" href="<?php echo $entry['link']?>">Read
-                more</a>
         </div>
-    </div>
-    <?php
+        <?php
     } ?>
 
+    </div>
+</div>
+
+<div class="join__wrap">
+    <p>
+        Become a member or supporter today!
+    </p>
+    <a type="button" class="button red button__ride" href="<?php echo get_post_meta($post->ID, "home_action_link", true); ?>">
+        Join the Condors
+    </a>
 </div>
 
 
