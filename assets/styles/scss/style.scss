@@ -71,5 +71,15 @@ CSS file.
 @import "boxes";
 @import "join";
 @import "button";
+@import "plans";
+@import "layout";
+@import "image";
+@import "mepr";
 @import "footer";
 @import "faq";
+
+html {
+  * {
+    box-sizing: border-box;
+  }
+}

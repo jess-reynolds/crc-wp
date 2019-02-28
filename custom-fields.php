@@ -129,6 +129,45 @@ function crc_register_boxes_fields()
     ));
 }
 
+
+add_action('cmb2_admin_init', 'crc_register_join_fields');
+
+function crc_register_join_fields()
+{
+    $prefix = 'join_';
+
+    $fields = new_cmb2_box(array(
+        'id'            => $prefix . 'metabox',
+        'title'         => esc_html__('Data', 'cmb2'),
+        'object_types'  => array( 'page' ),
+        'show_on'       => array( 'key' => 'page-template', 'value' =>  'page-templates/join-template.php' ),
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Memberhsip group', 'cmb2'),
+        'id'         => $prefix . 'group',
+        'type'       => 'text_small',
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Hero image', 'cmb2'),
+        'id'         => $prefix . 'hero',
+        'type'       => 'file',
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Headline', 'cmb2'),
+        'id'         => $prefix . 'headline',
+        'type'       => 'text',
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Introduction', 'cmb2'),
+        'id'         => $prefix . 'intro',
+        'type'       => 'textarea',
+    ));
+}
+
 add_action('cmb2_admin_init', 'crc_register_home_fields');
 
 function crc_register_home_fields()

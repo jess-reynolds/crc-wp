@@ -28,8 +28,8 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 	</div>
 </section>
 
-<div class="grid-container">
-	<div class="cell home__intro">
+<div class="layout__thin">
+	<div class="home__intro">
 		<div class="home__heading">
 			<?php echo get_post_meta($post->ID, "home_headline", true); ?>
 		</div>

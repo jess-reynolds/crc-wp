@@ -1,0 +1,12 @@
+.layout {
+  &__thin {
+    max-width: 50rem;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+
+  &__gap {
+    height: 3rem;
+  }
+}

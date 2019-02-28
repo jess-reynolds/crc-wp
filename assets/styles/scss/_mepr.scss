@@ -1,0 +1,59 @@
+.mepr {
+  &-most-popular {
+    display: none;
+  }
+
+  &-price {
+    $gap: 2rem;
+
+    &-box {
+      padding-top: 0.2rem;
+      display: grid;
+      gap: $gap;
+      justify-items: center;
+      width: 100%;
+      background-color: white;
+      font-family: Georgia, Times, "Times New Roman", serif;
+      font-size: 1rem;
+      text-align: center;
+
+      &-head {
+        display: grid;
+        gap: $gap;
+        justify-items: center;
+      }
+
+      &-title {
+        font-family: "Roboto Condensed", sans-serif;
+        font-weight: 800;
+        font-size: 1.9rem;
+        line-height: 1rem;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+      }
+
+      &-button {
+        display: flex;
+
+        a {
+          background-color: #e1429a;
+          padding: 1.2rem 1.1rem;
+          color: white;
+          font-family: "Roboto Condensed", sans-serif;
+          font-weight: 600;
+          font-size: 1rem;
+          text-transform: uppercase;
+
+          &:hover {
+            background-color: #d52285;
+          }
+        }
+      }
+
+      &-benefits,
+      &-footer {
+        display: none;
+      }
+    }
+  }
+}
