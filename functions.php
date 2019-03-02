@@ -65,12 +65,3 @@ function register_header_menu()
 {
     register_nav_menu('header-menu', __('Header Menu'));
 }
-
-add_filter('wp_nav_menu_items', 'your_custom_menu_item', 10, 2);
-function your_custom_menu_item($items, $args)
-{
-    if ($args->theme_location == 'header-menu') {
-        return '<li class="menu-item"><a href="/"><img title="Home" src="' . get_bloginfo('template_url') . '/assets/images/icon-club.png" /></a></li>' . $items;
-    }
-    return $items;
-}

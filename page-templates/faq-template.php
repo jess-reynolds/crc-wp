@@ -26,7 +26,8 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <div class="layout__thin">
     <div class="faq__intro">
-        <p><?php echo get_post_meta($post->ID, "faq_intro", true); ?>
+        <p class="prose">
+            <?php echo get_post_meta($post->ID, "faq_intro", true); ?>
         </p>
         <img title="Home" src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
     </div>
@@ -65,7 +66,9 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
                     <h2>
                         <?php echo $question; ?>
                     </h2>
-                    <?php echo wpautop($answer); ?>
+                    <p class="prose">
+                        <?php echo $answer; ?>
+                    </p>
                 </div>
                 <div class="cell small-1"></div>
                 <div class="cell small-2">
@@ -83,7 +86,9 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
             <h2>
                 <?php echo $question; ?>
             </h2>
-            <?php echo wpautop($answer); ?>
+            <p class="prose">
+                <?php echo $answer; ?>
+            </p>
             <?php
                     if (isset($entry['image']) && $entry['image'] != '') {
                         echo '<div class="faq__question--image"><img src="'.$entry['image'].'"></div>';

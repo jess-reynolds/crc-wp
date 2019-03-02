@@ -41,7 +41,44 @@
 
 	<?php wp_head(); ?>
 
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var elem = document.getElementsByClassName("nav__offcanvas--wrap")[0];
+			elem.style.display = "block";
+
+			document.documentElement.style.setProperty(
+				"--offcanvas-height",
+				"-" + elem.clientHeight + "px"
+			);
+		});
+
+		function hamburgerClick() {
+			var elem = document.getElementsByClassName("layout__wrap")[0];
+			if (elem.classList.contains("slide-in")) {
+				elem.classList.add("slide-out")
+				elem.classList.remove("slide-in")
+			} else {
+				elem.classList.add("slide-in")
+				elem.classList.remove("slide-out")
+			}
+		}
+	</script>
+
 </head>
 
 <body <?php body_class(); ?>>
-	<div class="layout__container">
+	<div class="layout__wrap">
+		<div class="nav__offcanvas--wrap">
+			<div class="nav__offcanvas--container">
+				<?php wp_nav_menu(array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav__offcanvas' )); ?>
+				<div class="nav__offcanvas--item">
+					<div>
+						<a href="/login">Sign in</a>
+					</div>
+				</div>
+				<div class="nav__offcanvas--close" onclick="hamburgerClick()">
+					<i class="fa fa-times"></i>
+				</div>
+			</div>
+		</div>
+		<div class="layout__container">

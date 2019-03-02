@@ -23,46 +23,42 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 </section>
 
 <div class="layout__thin">
-    <div class="home__heading">
-        <h2>
-            <?php echo get_post_meta($post->ID, "boxes_headline", true); ?>
-        </h2>
-    </div>
 
     <div class="cell boxes__intro">
         <p class="prose"><?php echo get_post_meta($post->ID, "boxes_intro", true); ?>
         </p>
         <img title="Home" src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
     </div>
-</div>
 
 
-<div class="boxes__wrap">
-    <div class="boxes__container">
-        <?php
+    <div class="boxes__wrap">
+        <div class="boxes__container">
+            <?php
     $questions = get_post_meta($post->ID, "boxes_boxes", true);
     foreach ((array) $questions as $key => $entry) {
         ?>
 
-        <div class="boxes__box--container">
-            <img class="boxes__box--image" src="<?php echo $entry['image'] ?>" />
-            <div class="boxes__box--title">
-                <?php echo $entry['title'] ?>
-            </div>
-            <div class="boxes__box--text">
-                <p>
-                    <?php echo $entry['blurb'] ?>
-                </p>
-            </div>
-            <a class="boxes__box--link link" href="<?php echo $entry['link']?>">Read
-                more</a>
+            <div class="boxes__box--container">
+                <img class="boxes__box--image" src="<?php echo $entry['image'] ?>" />
+                <div class="boxes__box--title">
+                    <?php echo $entry['title'] ?>
+                </div>
+                <div class="boxes__box--text">
+                    <p>
+                        <?php echo $entry['blurb'] ?>
+                    </p>
+                </div>
+                <a class="boxes__box--link link" href="<?php echo $entry['link']?>">Read
+                    more</a>
 
-        </div>
-        <?php
+            </div>
+            <?php
     } ?>
 
+        </div>
     </div>
 </div>
+
 
 <div class="join__wrap">
     <p>

@@ -9,7 +9,7 @@
       background-size: cover;
 
       width: 100%;
-      height: 35vh;
+      height: 100%;
 
       display: grid;
       grid-template-columns: 1fr;
@@ -22,7 +22,6 @@
     }
 
     &--inside {
-      grid-area: 1 / 1 / span 2 / 1;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -36,6 +35,7 @@
       h1 {
         text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
         text-align: center;
+        padding: 2em 0;
       }
 
       color: white;
@@ -49,10 +49,10 @@
 
   &__intro {
     text-align: center;
-    padding: 0 0 3.5rem 0;
+    padding: 2rem 0 3.5rem 0;
 
     p {
-      padding: 2rem 2rem 1rem 2rem;
+      padding: 2rem;
     }
 
     img {
