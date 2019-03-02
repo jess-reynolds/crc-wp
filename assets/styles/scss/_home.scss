@@ -1,3 +1,5 @@
+@import "variables";
+
 .home {
   &__hero {
     &--container {
@@ -38,37 +40,31 @@
       }
 
       h1 {
-        font-family: "Work Sans", sans-serif;
-        font-size: 5rem;
-        font-weight: 600;
-        letter-spacing: -0.05rem;
         text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        letter-spacing: -0.06em;
+        color: white;
+        font-size: 6rem;
+
+        @media screen and (max-width: $mobile-width) {
+          font-size: 4rem;
+        }
       }
-      color: white;
     }
   }
 
   &__heading {
-    font-family: "Work Sans", sans-serif;
-    font-weight: 700;
-    font-size: 2.5rem;
-    line-height: 1em;
     padding: 2rem 1rem 0 1rem;
     text-align: center;
-    letter-spacing: -0.05rem;
     color: rgb(73, 73, 73);
   }
 
   &__intro {
     margin: 3rem 0;
     text-align: center;
+
     p {
-      font-family: Georgia, Times, "Times New Roman", serif;
-      font-size: 1rem;
-      line-height: 2rem;
       padding: 2rem 1rem 1rem 1rem;
       text-align: center;
-      color: rgb(73, 73, 73);
     }
   }
 
@@ -82,7 +78,7 @@
       background-blend-mode: multiply;
       background-size: cover;
 
-      width: 100vw;
+      width: 100%;
 
       display: grid;
       grid-template-columns: 1fr;
@@ -99,6 +95,7 @@
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: min-content min-content;
+      gap: 1rem;
 
       img {
         margin: 0 auto;
@@ -107,30 +104,19 @@
 
       h1 {
         text-align: center;
-        font-family: "Work Sans", sans-serif;
-        font-size: 3.5rem;
-        font-weight: 700;
-        letter-spacing: -0.05rem;
         text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        color: white;
       }
 
       p {
-        font-family: Georgia, Times, "Times New Roman", serif;
-        font-size: 1rem;
+        color: white;
         text-align: center;
+        line-height: 1.2em;
       }
 
       a {
-        font-family: Georgia, Times, "Times New Roman", serif;
-        font-size: 1rem;
-        letter-spacing: -0.02rem;
-        text-align: center;
-        font-style: italic;
         color: white;
-        text-decoration: underline;
       }
-
-      color: white;
     }
   }
 }

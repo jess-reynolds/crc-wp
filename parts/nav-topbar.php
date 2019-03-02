@@ -6,13 +6,11 @@
  */
 ?>
 
-<div class="top-bar" id="main-menu">
-	<div class="top-bar-left">
-		<ul class="menu">
-			<li><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></li>
-		</ul>
-	</div>
-	<div class="top-bar-right">
-		<?php joints_top_nav(); ?>
+<div class="nav__bar">
+	<?php wp_nav_menu(array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav__container' )); ?>
+	<div class="menu-item">
+		<div>
+			<a href="/login">Sign in</a>
+		</div>
 	</div>
 </div>

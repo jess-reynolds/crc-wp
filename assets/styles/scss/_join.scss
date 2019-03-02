@@ -1,3 +1,5 @@
+@import "variables";
+
 .join {
   &__wrap {
     display: flex;
@@ -7,11 +9,60 @@
     padding: 1.5rem 0 1rem 0;
 
     p {
-      font-family: Georgia, Times, "Times New Roman", serif;
-      font-size: 0.9rem;
       padding: 1rem;
       text-align: center;
-      color: rgb(73, 73, 73);
+    }
+  }
+
+  &__collage {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, minmax(5rem, 1fr));
+    align-items: stretch;
+    gap: 1rem;
+    transform: translateY(-7rem);
+    margin-bottom: -5rem;
+    max-height: 30rem;
+
+    @media screen and (max-width: $mobile-width) {
+      gap: 0.5rem;
+    }
+
+    &--image {
+      object-fit: cover;
+      width: 100%;
+
+      &-1 {
+        grid-area: 1 / 1 / span 3 / 1;
+      }
+
+      &-2 {
+        grid-area: 1 / 2 / 1 / span 2;
+      }
+
+      &-3 {
+        grid-area: 1 / 4 / span 2 / 4;
+      }
+
+      &-4 {
+        grid-area: 1 / 5 / span 3 / 5;
+      }
+
+      &-5 {
+        grid-area: 2 / 2 / 2 / 2;
+      }
+
+      &-6 {
+        grid-area: 2 / 3 / span 2 / 3;
+      }
+
+      &-7 {
+        grid-area: 3 / 4 / 3 / 4;
+      }
+
+      &-8 {
+        grid-area: 3 / 2 / 3 / 2;
+      }
     }
   }
 }

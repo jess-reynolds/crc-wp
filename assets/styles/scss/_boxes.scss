@@ -9,7 +9,7 @@
       background-size: cover;
 
       width: 100%;
-      height: 25vh;
+      height: 35vh;
 
       display: grid;
       grid-template-columns: 1fr;
@@ -34,37 +34,25 @@
       grid-template-rows: min-content min-content;
 
       h1 {
-        font-family: "Work Sans", sans-serif;
-        font-size: 4rem;
-        font-weight: 700;
-        letter-spacing: -0.05rem;
         text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+        text-align: center;
       }
+
       color: white;
     }
   }
 
   &__heading {
-    font-family: "Work Sans", sans-serif;
-    font-weight: 700;
-    font-size: 2.5rem;
-    line-height: 1rem;
     padding: 2rem 1rem 0 1rem;
     text-align: center;
-    letter-spacing: -0.05rem;
-    color: rgb(73, 73, 73);
   }
 
   &__intro {
     text-align: center;
-    padding: 2rem 0 3.5rem 0;
+    padding: 0 0 3.5rem 0;
 
     p {
-      font-family: Georgia, Times, "Times New Roman", serif;
-      font-size: 1rem;
-      line-height: 2rem;
       padding: 2rem 2rem 1rem 2rem;
-      color: rgb(73, 73, 73);
     }
 
     img {
@@ -76,19 +64,17 @@
 
   &__container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 30rem;
-    margin-right: -1px;
-    margin-bottom: -1px;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    //grid-template-rows: 30rem;
+    row-gap: 2rem;
   }
 
   &__box {
     &--container {
-      padding: 3.5rem;
+      padding: 2rem;
       display: grid;
-      grid-template-rows: 2fr 1fr 2fr 1fr;
+      grid-template-rows: 10rem;
       height: 100%;
-      border-right: 1px solid rgb(73, 73, 73);
     }
 
     &--image {
@@ -104,7 +90,7 @@
     }
 
     &--title {
-      font-family: 'Roboto Condensed', sans-serif;
+      font-family: "Roboto Condensed", sans-serif;
       font-weight: 800;
       font-size: 1.4rem;
       line-height: 1em;
@@ -116,23 +102,12 @@
     }
 
     &--text {
-      font-family: Georgia, Times, "Times New Roman", serif;
-      font-size: 0.9rem;
-      line-height: 1.35rem;
       padding: 0.4rem;
-      color: rgb(73, 73, 73);
       text-align: center;
     }
 
     &--link {
-      font-family: Georgia, Times, "Times New Roman", serif;
-      font-size: 0.9rem;
-      line-height: 1.35rem;
-      font-style: italic;
-      text-decoration: underline;
       padding-top: 0.5rem;
-      color: #e1429a;
-      text-align: center;
     }
   }
 }

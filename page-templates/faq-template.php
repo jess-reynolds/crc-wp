@@ -8,19 +8,14 @@
  */
 
 get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
+<div class="faq__head--wrap">
+    <div class="faq__head--hill"></div>
+    <img class="faq__head--bike" src="<?php bloginfo('template_url'); ?>/assets/images/bike.png" />
+</div>
 
-<div class="faq__head--hill"></div>
-<img class="faq__head--bike" src="<?php bloginfo('template_url'); ?>/assets/images/bike.png" />
 <section class="faq__head--container">
     <div class="faq__head--header">
-        <div class="nav__bar">
-            <?php wp_nav_menu(array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav__container' )); ?>
-            <div class="menu-item">
-                <div>
-                    <a href="/login">Sign in</a>
-                </div>
-            </div>
-        </div>
+        <?php get_template_part('parts/nav', 'topbar'); ?>
     </div>
     <div class="faq__head--text">
         <h1>
@@ -29,14 +24,11 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
     </div>
 </section>
 
-<div class="grid-container">
-    <div class="grid-x">
-        <div class="cell faq__intro">
-            <p><?php echo get_post_meta($post->ID, "faq_intro", true); ?>
-            </p>
-            <img title="Home" src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
-        </div>
-
+<div class="layout__thin">
+    <div class="faq__intro">
+        <p><?php echo get_post_meta($post->ID, "faq_intro", true); ?>
+        </p>
+        <img title="Home" src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
     </div>
 </div>
 

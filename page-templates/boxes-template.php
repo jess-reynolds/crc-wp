@@ -11,14 +11,7 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <section class="boxes__hero--container" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url('<?php echo get_post_meta($post->ID, "boxes_hero", true); ?>')">
     <div class="boxes__hero--header">
-        <div class="nav__bar">
-            <?php wp_nav_menu(array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav__container' )); ?>
-            <div class="menu-item">
-                <div>
-                    <a href="/login">Sign in</a>
-                </div>
-            </div>
-        </div>
+        <?php get_template_part('parts/nav', 'topbar'); ?>
     </div>
     <div class="boxes__hero--inside">
         <div class="boxes__hero--text">
@@ -29,20 +22,20 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
     </div>
 </section>
 
-<div class="grid-container">
-    <div class="grid-x">
-        <div class="home__heading">
+<div class="layout__thin">
+    <div class="home__heading">
+        <h2>
             <?php echo get_post_meta($post->ID, "boxes_headline", true); ?>
-        </div>
+        </h2>
+    </div>
 
-        <div class="cell boxes__intro">
-            <p><?php echo get_post_meta($post->ID, "boxes_intro", true); ?>
-            </p>
-            <img title="Home" src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
-        </div>
-
+    <div class="cell boxes__intro">
+        <p class="prose"><?php echo get_post_meta($post->ID, "boxes_intro", true); ?>
+        </p>
+        <img title="Home" src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
     </div>
 </div>
+
 
 <div class="boxes__wrap">
     <div class="boxes__container">
@@ -53,11 +46,15 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
         <div class="boxes__box--container">
             <img class="boxes__box--image" src="<?php echo $entry['image'] ?>" />
-            <div class="boxes__box--title"><?php echo $entry['title'] ?>
+            <div class="boxes__box--title">
+                <?php echo $entry['title'] ?>
             </div>
-            <div class="boxes__box--text"><?php echo $entry['blurb'] ?>
+            <div class="boxes__box--text">
+                <p>
+                    <?php echo $entry['blurb'] ?>
+                </p>
             </div>
-            <a class="boxes__box--link" href="<?php echo $entry['link']?>">Read
+            <a class="boxes__box--link link" href="<?php echo $entry['link']?>">Read
                 more</a>
 
         </div>

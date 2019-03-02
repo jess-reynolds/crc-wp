@@ -68,6 +68,7 @@ CSS file.
 @import "global";
 @import "nav";
 @import "home";
+@import "wpforms";
 @import "boxes";
 @import "join";
 @import "button";
@@ -76,10 +77,22 @@ CSS file.
 @import "image";
 @import "mepr";
 @import "footer";
+@import "text";
 @import "faq";
+@import "variables";
 
 html {
+  //margin-top: 0 !important;
+
   * {
     box-sizing: border-box;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  #wpadminbar {
+    //display: none;
   }
 }

@@ -11,35 +11,35 @@
 get_header(); if (have_posts()) : while (have_posts()) : the_post();
 ?>
 
-<section class="boxes__hero--container" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url('<?php echo get_post_meta($post->ID, "join_hero", true); ?>')">
+<section class="boxes__hero--container plans__hero">
     <div class="boxes__hero--header">
-        <div class="nav__bar">
-            <?php wp_nav_menu(array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav__container' )); ?>
-            <div class="menu-item">
-                <div>
-                    <a href="/login">Sign in</a>
-                </div>
-            </div>
-        </div>
+        <?php get_template_part('parts/nav', 'topbar'); ?>
     </div>
     <div class="boxes__hero--inside">
         <div class="boxes__hero--text">
             <h1>
-                <?php the_title(); ?>
+                <?php echo get_post_meta($post->ID, "join_heading", true); ?>
             </h1>
         </div>
     </div>
 </section>
 
-<div class="layout__gap"></div>
+
+<div class="join__collage">
+    <img class="join__collage--image join__collage--image-1" src="<?php echo get_post_meta($post->ID, "join_collage1", true); ?>" />
+    <img class="join__collage--image join__collage--image-2" src="<?php echo get_post_meta($post->ID, "join_collage2", true); ?>" />
+    <img class="join__collage--image join__collage--image-3" src="<?php echo get_post_meta($post->ID, "join_collage3", true); ?>" />
+    <img class="join__collage--image join__collage--image-4" src="<?php echo get_post_meta($post->ID, "join_collage4", true); ?>" />
+    <img class="join__collage--image join__collage--image-5" src="<?php echo get_post_meta($post->ID, "join_collage5", true); ?>" />
+    <img class="join__collage--image join__collage--image-6" src="<?php echo get_post_meta($post->ID, "join_collage6", true); ?>" />
+    <img class="join__collage--image join__collage--image-7" src="<?php echo get_post_meta($post->ID, "join_collage7", true); ?>" />
+    <img class="join__collage--image join__collage--image-8" src="<?php echo get_post_meta($post->ID, "join_collage8", true); ?>" />
+</div>
+
 
 <div class="layout__thin">
     <div>
-        <div class="home__heading">
-            <?php echo get_post_meta($post->ID, "join_headline", true); ?>
-        </div>
-
-        <div class="cell boxes__intro">
+        <div class="boxes__intro">
             <p><?php echo get_post_meta($post->ID, "join_intro", true); ?>
             </p>
         </div>

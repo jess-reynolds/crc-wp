@@ -48,9 +48,20 @@ require_once(get_template_directory().'/functions/translation/translation.php');
 
 require_once(get_template_directory().'/custom-fields.php');
 
-add_action('init', 'register_my_menu');
+add_action('init', 'register_footer_menu');
+function register_footer_menu()
+{
+    register_nav_menu('footer-menu', __('Footer Menu'));
+}
 
-function register_my_menu()
+add_action('init', 'register_social_menu');
+function register_social_menu()
+{
+    register_nav_menu('social-menu', __('Social Menu'));
+}
+
+add_action('init', 'register_header_menu');
+function register_header_menu()
 {
     register_nav_menu('header-menu', __('Header Menu'));
 }

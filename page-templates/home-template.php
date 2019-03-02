@@ -11,14 +11,7 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <section class="home__hero--container" style="background-image: linear-gradient(rgba(232, 110, 178, 0.72), rgba(100, 35, 109, 0.72)), linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url('<?php echo get_post_meta($post->ID, "home_hero", true); ?>')">
 	<div class="home__hero--header">
-		<div class="nav__bar">
-			<?php wp_nav_menu(array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav__container' )); ?>
-			<div class="menu-item">
-				<div>
-					<a href="/login">Sign in</a>
-				</div>
-			</div>
-		</div>
+		<?php get_template_part('parts/nav', 'topbar'); ?>
 	</div>
 	<div class="home__hero--inside">
 		<div class="home__hero--text">
@@ -31,9 +24,11 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 <div class="layout__thin">
 	<div class="home__intro">
 		<div class="home__heading">
-			<?php echo get_post_meta($post->ID, "home_headline", true); ?>
+			<h2>
+				<?php echo get_post_meta($post->ID, "home_headline", true); ?>
+			</h2>
 		</div>
-		<p>
+		<p class="prose">
 			<?php echo get_post_meta($post->ID, "home_intro", true); ?>
 		</p>
 		<a type="button" class="button red button__ride" href="<?php echo get_post_meta($post->ID, "home_action_link", true); ?>">
@@ -73,7 +68,7 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<p>
 				<?php echo $blurb; ?>
 			</p>
-			<a href="<?php echo $link; ?>">Read more</a>
+			<a class="link" href="<?php echo $link; ?>">Read more</a>
 		</div>
 	</div>
 </section>

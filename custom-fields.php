@@ -156,8 +156,8 @@ function crc_register_join_fields()
     ));
 
     $fields->add_field(array(
-        'name'       => esc_html__('Headline', 'cmb2'),
-        'id'         => $prefix . 'headline',
+        'name'       => esc_html__('Heading', 'cmb2'),
+        'id'         => $prefix . 'heading',
         'type'       => 'text',
     ));
 
@@ -165,6 +165,54 @@ function crc_register_join_fields()
         'name'       => esc_html__('Introduction', 'cmb2'),
         'id'         => $prefix . 'intro',
         'type'       => 'textarea',
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Collage image 1', 'cmb2'),
+        'id'         => $prefix . 'collage1',
+        'type'       => 'file',
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Collage image 2', 'cmb2'),
+        'id'         => $prefix . 'collage2',
+        'type'       => 'file',
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Collage image 3', 'cmb2'),
+        'id'         => $prefix . 'collage3',
+        'type'       => 'file',
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Collage image 4', 'cmb2'),
+        'id'         => $prefix . 'collage4',
+        'type'       => 'file',
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Collage image 5', 'cmb2'),
+        'id'         => $prefix . 'collage5',
+        'type'       => 'file',
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Collage image 6', 'cmb2'),
+        'id'         => $prefix . 'collage6',
+        'type'       => 'file',
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Collage image 7', 'cmb2'),
+        'id'         => $prefix . 'collage7',
+        'type'       => 'file',
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Collage image 8', 'cmb2'),
+        'id'         => $prefix . 'collage8',
+        'type'       => 'file',
     ));
 }
 

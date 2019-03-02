@@ -1,5 +1,11 @@
+@import "variables";
+
 .faq {
   &__head {
+    &--wrap {
+      position: relative;
+    }
+
     &--hill {
       position: absolute;
       transform: skewY(-10deg) translateY(-50%);
@@ -15,7 +21,7 @@
       position: absolute;
       margin: auto;
       left: 50%;
-      top: 307px;
+      top: 309px;
       transform: rotate(-10deg);
       filter: brightness(6.5);
     }
@@ -28,7 +34,7 @@
       grid-template-columns: 1fr;
       grid-template-rows: min-content auto;
 
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: $mobile-width) {
         height: 430px;
       }
     }
@@ -41,13 +47,8 @@
       }
 
       h1 {
-        font-family: "Work Sans", sans-serif;
-        font-size: 3.5rem;
-        line-height: 3rem;
-        font-weight: 700;
         padding: 0 0.5rem;
         text-align: center;
-        letter-spacing: -0.05rem;
         text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
       }
       color: white;
@@ -55,13 +56,8 @@
   }
 
   &__heading {
-    font-family: "Work Sans", sans-serif;
-    font-weight: 700;
-    font-size: 2.5rem;
-    line-height: 1rem;
     padding: 2rem 1rem 0 1rem;
     text-align: center;
-    letter-spacing: -0.05rem;
     color: rgb(73, 73, 73);
   }
 
@@ -69,11 +65,7 @@
     text-align: center;
 
     p {
-      font-family: Georgia, Times, "Times New Roman", serif;
-      font-size: 1rem;
-      line-height: 2rem;
       padding: 2rem 2rem 1rem 2rem;
-      color: rgb(73, 73, 73);
     }
 
     img {
@@ -111,25 +103,8 @@
         }
       }
 
-      h2 {
-        font-family: "Work Sans", sans-serif;
-        font-weight: 700;
-        letter-spacing: -0.05rem;
-        line-height: 3.2rem;
-        font-size: 3rem;
-
-        @media screen and (max-width: 1000px) {
-          line-height: 2.2rem;
-          font-size: 2rem;
-        }
-      }
-
       p {
-        font-family: Georgia, Times, "Times New Roman", serif;
-        font-size: 1rem;
-        line-height: 2rem;
         padding-top: 0.5rem;
-        color: rgb(73, 73, 73);
       }
     }
 

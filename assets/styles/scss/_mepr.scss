@@ -36,16 +36,18 @@
         display: flex;
 
         a {
-          background-color: #e1429a;
+          border: 1px solid #d52285;
           padding: 1.2rem 1.1rem;
-          color: white;
+          color: #d52285;
           font-family: "Roboto Condensed", sans-serif;
           font-weight: 600;
           font-size: 1rem;
           text-transform: uppercase;
 
           &:hover {
-            background-color: #d52285;
+            background-color: #e1429a;
+            border-color: #e1429a;
+            color: white;
           }
         }
       }

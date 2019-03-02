@@ -3,23 +3,41 @@
   padding: 1rem;
   color: white;
   font-size: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+  }
+
+  &__social {
+    display: flex;
+    justify-self: flex-end;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
   p {
     margin-bottom: 0;
-  }
-
-  &__link {
-    color: white;
-    padding: 0 1rem;
-    font-family: "Work Sans", sans-serif;
+    white-space: nowrap;
+    padding-right: 2rem;
   }
 
   a {
     color: white;
     text-decoration: underline;
+    white-space: nowrap;
+    color: white;
+    font-family: "Work Sans", sans-serif;
+    padding-right: 2rem;
 
     &:hover {
-        color: rgb(255, 187, 224);
+      color: rgb(255, 187, 224);
     }
   }
 }
