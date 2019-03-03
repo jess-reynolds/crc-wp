@@ -18,6 +18,7 @@
     display: flex;
     margin: 0 0 0 auto;
     list-style: none;
+    flex-wrap: wrap;
 
     @media screen and (max-width: $mobile-width) {
       font-size: 1.2rem;
