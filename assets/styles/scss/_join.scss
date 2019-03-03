@@ -14,15 +14,20 @@
     }
   }
 
+  &__intro {
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+
   &__collage {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3, minmax(5rem, 1fr));
     align-items: stretch;
     gap: 1rem;
-    transform: translateY(-7rem);
-    margin-bottom: -5rem;
     max-height: 30rem;
+    margin-top: -10vh;
+    z-index: 1;
 
     @media screen and (max-width: $mobile-width) {
       gap: 0.5rem;

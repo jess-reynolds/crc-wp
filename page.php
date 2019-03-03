@@ -7,12 +7,12 @@
 
 get_header(); ?>
 
-<section class="boxes__hero--container plans__hero">
-	<div class="boxes__hero--header">
+<section class="header--container plans__hero">
+	<div class="header--header">
 		<?php get_template_part('parts/nav', 'topbar'); ?>
 	</div>
-	<div class="boxes__hero--inside">
-		<div class="boxes__hero--text">
+	<div class="header--inside">
+		<div class="header--text">
 			<h1>
 				<?php the_title() ?>
 			</h1>

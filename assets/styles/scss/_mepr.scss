@@ -4,7 +4,7 @@
   }
 
   &-price {
-    $gap: 2rem;
+    $gap: 1rem;
 
     &-box {
       padding-top: 0.2rem;
@@ -30,6 +30,10 @@
         line-height: 1rem;
         margin-bottom: 1.5rem;
         text-transform: uppercase;
+      }
+
+      &-foot {
+        margin-top: 1rem;
       }
 
       &-button {

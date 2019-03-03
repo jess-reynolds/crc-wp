@@ -11,12 +11,12 @@
 get_header(); if (have_posts()) : while (have_posts()) : the_post();
 ?>
 
-<section class="boxes__hero--container plans__hero">
-    <div class="boxes__hero--header">
+<section class="header--container plans__hero">
+    <div class="header--header">
         <?php get_template_part('parts/nav', 'topbar'); ?>
     </div>
-    <div class="boxes__hero--inside">
-        <div class="boxes__hero--text">
+    <div class="header--inside">
+        <div class="header--text">
             <h1>
                 <?php echo get_post_meta($post->ID, "join_heading", true); ?>
             </h1>
@@ -38,11 +38,10 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post();
 
 
 <div class="layout__thin">
-    <div>
-        <div class="boxes__intro">
-            <p><?php echo get_post_meta($post->ID, "join_intro", true); ?>
-            </p>
-        </div>
+    <div class="join__intro">
+        <p>
+            <?php echo get_post_meta($post->ID, "join_intro", true); ?>
+        </p>
     </div>
 </div>
 
