@@ -9,18 +9,22 @@
 
 get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 <div class="faq__head--wrap">
-    <div class="faq__head--hill"></div>
-    <img class="faq__head--bike" src="<?php bloginfo('template_url'); ?>/assets/images/bike.png" />
+    <div class="faq__head--hill">
+        <img class="faq__head--bike" src="<?php bloginfo('template_url'); ?>/assets/images/bike.png" />
+    </div>
+
 </div>
 
-<section class="faq__head--container">
-    <div class="faq__head--header">
+<section class="header--container faq__head--container">
+    <div class="header--header">
         <?php get_template_part('parts/nav', 'topbar'); ?>
     </div>
-    <div class="faq__head--text">
-        <h1>
-            <?php the_title(); ?>
-        </h1>
+    <div class="header--inside">
+        <div class="header--text">
+            <h1>
+                <?php the_title(); ?>
+            </h1>
+        </div>
     </div>
 </section>
 

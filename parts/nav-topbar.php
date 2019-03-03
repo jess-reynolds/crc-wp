@@ -1,5 +1,3 @@
-
-
 <div class="nav__bar--wrap">
 	<div class="nav__bar">
 		<?php wp_nav_menu(array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav__container' )); ?>

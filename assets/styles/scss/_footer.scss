@@ -2,32 +2,30 @@
 
 .footer {
   background-color: $dark;
-  padding: 1rem;
+  padding: 0.5rem;
   color: white;
   font-size: 0.8rem;
   display: flex;
   flex-wrap: wrap;
-
-  &__links {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex-grow: 1;
-  }
+  list-style: none;
 
   &__social {
     display: flex;
-    justify-self: flex-end;
+    margin: 0 0 0 auto;
     list-style: none;
-    margin: 0;
-    padding: 0;
   }
 
   p {
     margin-bottom: 0;
     white-space: nowrap;
-    padding-right: 2rem;
+    font-family: "Work Sans", sans-serif;
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  li {
+    padding: 0.2rem 0.5rem;
   }
 
   a {
@@ -36,7 +34,6 @@
     white-space: nowrap;
     color: white;
     font-family: "Work Sans", sans-serif;
-    padding-right: 2rem;
 
     &:hover {
       color: rgb(255, 187, 224);

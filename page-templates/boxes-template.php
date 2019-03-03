@@ -9,12 +9,12 @@
 
 get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<section class="boxes__hero--container" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url('<?php echo get_post_meta($post->ID, "boxes_hero", true); ?>')">
-    <div class="boxes__hero--header">
+<section class="header--container" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url('<?php echo get_post_meta($post->ID, "boxes_hero", true); ?>')">
+    <div class="header--header">
         <?php get_template_part('parts/nav', 'topbar'); ?>
     </div>
-    <div class="boxes__hero--inside">
-        <div class="boxes__hero--text">
+    <div class="header--inside">
+        <div class="header--text">
             <h1>
                 <?php the_title(); ?>
             </h1>
@@ -30,7 +30,6 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
         <img title="Home" src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
     </div>
 
-
     <div class="boxes__wrap">
         <div class="boxes__container">
             <?php
@@ -39,10 +38,18 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
         ?>
 
             <div class="boxes__box--container">
-                <img class="boxes__box--image" src="<?php echo $entry['image'] ?>" />
+                <a href="<?php echo $entry['link']?>">
+                    <img class="boxes__box--image" src="<?php echo $entry['image'] ?>" />
+                </a>
+
                 <div class="boxes__box--title">
-                    <?php echo $entry['title'] ?>
+                    <h3>
+                        <a class="boxes__box--title-a" href="<?php echo $entry['link']?>">
+                            <?php echo $entry['title'] ?>
+                        </a>
+                    </h3>
                 </div>
+
                 <div class="boxes__box--text">
                     <p>
                         <?php echo $entry['blurb'] ?>
