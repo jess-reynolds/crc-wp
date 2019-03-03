@@ -5,6 +5,7 @@
 .layout {
   &__wrap {
     transform: translateY(var(--offcanvas-height));
+    height: 0;
   }
 
   &__container {
@@ -28,7 +29,7 @@
   }
 }
 
-$time: 0.3s;
+$time: 0.17s;
 
 .slide-in {
   animation: slide-in $time forwards;

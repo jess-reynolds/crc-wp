@@ -1,6 +1,8 @@
+@import "variables";
+
 .plans {
   &__hero {
-    background-color: #e1429a;
+    background-color: $pink;
   }
 
   &__container {

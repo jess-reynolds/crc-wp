@@ -1,5 +1,7 @@
+@import "variables";
+
 .footer {
-  background-color: rgb(68, 68, 68);
+  background-color: $dark;
   padding: 1rem;
   color: white;
   font-size: 0.8rem;

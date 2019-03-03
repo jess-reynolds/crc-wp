@@ -30,7 +30,7 @@ p {
   margin: 0;
   font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 1rem;
-  color: rgb(73, 73, 73);
+  color: $dark;
 
   &.prose {
     line-height: 2em;
@@ -48,6 +48,6 @@ p {
   font-style: italic;
   text-decoration: underline;
   padding-top: 0.5rem;
-  color: #e1429a;
+  color: $dark-pink;
   text-align: center;
 }

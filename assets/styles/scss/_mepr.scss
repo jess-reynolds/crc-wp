@@ -36,17 +36,17 @@
         display: flex;
 
         a {
-          border: 1px solid #d52285;
+          border: 1px solid $darker-pink;
           padding: 1.2rem 1.1rem;
-          color: #d52285;
+          color: $darker-pink;
           font-family: "Roboto Condensed", sans-serif;
           font-weight: 600;
           font-size: 1rem;
           text-transform: uppercase;
 
           &:hover {
-            background-color: #e1429a;
-            border-color: #e1429a;
+            background-color: $dark-pink;
+            border-color: $dark-pink;
             color: white;
           }
         }

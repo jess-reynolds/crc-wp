@@ -9,11 +9,12 @@
     &--hill {
       position: absolute;
       transform: skewY(-10deg) translateY(-50%);
-      background-color: #e86eb2;
+      background-color: $pink;
       width: 100%;
       height: 750px;
       transform-origin: center;
       overflow: hidden;
+      z-index: -1;
     }
 
     &--bike {
@@ -58,7 +59,7 @@
   &__heading {
     padding: 2rem 1rem 0 1rem;
     text-align: center;
-    color: rgb(73, 73, 73);
+    color: $dark;
   }
 
   &__intro {

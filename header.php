@@ -52,6 +52,16 @@
 			);
 		});
 
+		window.addEventListener('resize', function() {
+			var elem = document.getElementsByClassName("nav__offcanvas--wrap")[0];
+			elem.style.display = "block";
+
+			document.documentElement.style.setProperty(
+				"--offcanvas-height",
+				"-" + elem.clientHeight + "px"
+			);
+		});
+
 		function hamburgerClick() {
 			var elem = document.getElementsByClassName("layout__wrap")[0];
 			if (elem.classList.contains("slide-in")) {
