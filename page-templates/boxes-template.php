@@ -37,11 +37,11 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
             <?php
     $questions = get_post_meta($post->ID, "boxes_boxes", true);
     foreach ((array) $questions as $key => $entry) {
+        $link = get_permalink($entry['link'][0])
         ?>
 
             <div class="boxes__box--container">
-                <a
-                    href="<?php echo $entry['link']?>">
+                <a href="<?php echo $link ?>">
                     <img class="boxes__box--image"
                         src="<?php echo $entry['image'] ?>" />
                 </a>
@@ -49,7 +49,7 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <div class="boxes__box--title">
                     <h3>
                         <a class="boxes__box--title-a"
-                            href="<?php echo $entry['link']?>">
+                            href="<?php echo $link ?>">
                             <?php echo $entry['title'] ?>
                         </a>
                     </h3>
@@ -61,7 +61,7 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
                     </p>
                 </div>
                 <a class="boxes__box--link link"
-                    href="<?php echo $entry['link']?>">Read
+                    href="<?php echo $link ?>">Read
                     more</a>
 
             </div>
