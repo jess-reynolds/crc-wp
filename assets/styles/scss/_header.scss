@@ -24,14 +24,15 @@
   }
 
   &--header {
-    grid-area: 1 / 1 / 1 / 1;
+    //grid-area: 1 / 1 / 1 / 1;
+    border-bottom: 1px solid white;
   }
 
   &--inside {
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-area: 1 / 1 / span 2 / 1;
+    //grid-area: 1 / 1 / span 2 / 1;
   }
 
   &--text {

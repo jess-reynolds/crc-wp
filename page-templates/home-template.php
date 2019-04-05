@@ -9,13 +9,15 @@
  
 get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<section class="header--container pink" style="background-image: linear-gradient(rgba(232, 110, 178, 0.72), rgba(100, 35, 109, 0.72)), linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url('<?php echo get_post_meta($post->ID, "home_hero", true); ?>')">
+<section class="header--container pink"
+	style="background-image: linear-gradient(rgba(232, 110, 178, 0.72), rgba(100, 35, 109, 0.72)), linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url('<?php echo get_post_meta($post->ID, "home_hero", true); ?>')">
 	<div class="header--header">
 		<?php get_template_part('parts/nav', 'topbar'); ?>
 	</div>
 	<div class="header--inside">
 		<div class="header--text">
-			<img src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
+			<img
+				src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
 			<h1 class="home__logo">condors</h1>
 		</div>
 	</div>
@@ -31,7 +33,8 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<p class="prose">
 			<?php echo get_post_meta($post->ID, "home_intro", true); ?>
 		</p>
-		<a type="button" class="button red button__ride" href="<?php echo get_post_meta($post->ID, "home_action_link", true); ?>">
+		<a type="button" class="button red button__ride"
+			href="<?php echo get_permalink(get_post_meta($post->ID, "home_action_link", true)[0]); ?>">
 			<?php echo get_post_meta($post->ID, "home_action_title", true); ?>
 		</a>
 	</div>
@@ -50,8 +53,8 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
             $blurb = esc_html($entry['blurb']);
         }
 
-        if (isset($entry['link'])) {
-            $link = esc_html($entry['link']);
+        if (isset($entry['link']) && sizeof($entry['link']) > 0) {
+            $link = $entry['link'][0];
         }
         
         if (isset($entry['image'])) {
@@ -68,7 +71,9 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<p>
 				<?php echo $blurb; ?>
 			</p>
-			<a class="link" href="<?php echo $link; ?>">Read more</a>
+			<a class="link"
+				href="<?php echo get_permalink($link); ?>">Read
+				more</a>
 		</div>
 	</div>
 </section>

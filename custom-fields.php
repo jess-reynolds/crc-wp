@@ -13,6 +13,8 @@
 
 add_action('cmb2_admin_init', 'crc_register_faq_fields');
 
+require_once WPMU_PLUGIN_DIR . '/cmb2-attached-posts/cmb2-attached-posts-field.php';
+
 function crc_register_faq_fields()
 {
     $prefix = 'faq_';
@@ -125,7 +127,14 @@ function crc_register_boxes_fields()
     $fields->add_group_field($group_field_id, array(
         'name' => 'Link',
         'id'   => 'link',
-        'type' => 'text',
+        'type'    => 'custom_attached_posts',
+        'options' => array(
+            'filter_boxes'    => true,
+            'query_args'      => array(
+                'posts_per_page' => 100,
+                'post_type'      => 'page',
+            ),
+        ),
     ));
 }
 
@@ -250,7 +259,14 @@ function crc_register_home_fields()
     $fields->add_field(array(
         'name'       => esc_html__('Action link', 'cmb2'),
         'id'         => $prefix . 'action_link',
-        'type'       => 'text',
+        'type'    => 'custom_attached_posts',
+        'options' => array(
+            'filter_boxes'    => true,
+            'query_args'      => array(
+                'posts_per_page' => 100,
+                'post_type'      => 'page',
+            ),
+        ),
     ));
 
     $fields->add_field(array(
@@ -290,8 +306,15 @@ function crc_register_home_fields()
     ));
 
     $fields->add_group_field($group_field_id, array(
-        'name' => 'Link',
-        'id'   => 'link',
-        'type' => 'text',
+        'name'    => 'Link',
+        'id'      => 'link',
+        'type'    => 'custom_attached_posts',
+        'options' => array(
+            'filter_boxes'    => true,
+            'query_args'      => array(
+                'posts_per_page' => 100,
+                'post_type'      => 'page',
+            ),
+        ),
     ));
 }

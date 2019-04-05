@@ -9,7 +9,8 @@
 
 get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<section class="header--container" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url('<?php echo get_post_meta($post->ID, "boxes_hero", true); ?>')">
+<section class="header--container"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url('<?php echo get_post_meta($post->ID, "boxes_hero", true); ?>')">
     <div class="header--header">
         <?php get_template_part('parts/nav', 'topbar'); ?>
     </div>
@@ -27,7 +28,8 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
     <div class="cell boxes__intro">
         <p class="prose"><?php echo get_post_meta($post->ID, "boxes_intro", true); ?>
         </p>
-        <img title="Home" src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
+        <img title="Home"
+            src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
     </div>
 
     <div class="boxes__wrap">
@@ -38,13 +40,16 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
         ?>
 
             <div class="boxes__box--container">
-                <a href="<?php echo $entry['link']?>">
-                    <img class="boxes__box--image" src="<?php echo $entry['image'] ?>" />
+                <a
+                    href="<?php echo $entry['link']?>">
+                    <img class="boxes__box--image"
+                        src="<?php echo $entry['image'] ?>" />
                 </a>
 
                 <div class="boxes__box--title">
                     <h3>
-                        <a class="boxes__box--title-a" href="<?php echo $entry['link']?>">
+                        <a class="boxes__box--title-a"
+                            href="<?php echo $entry['link']?>">
                             <?php echo $entry['title'] ?>
                         </a>
                     </h3>
@@ -55,7 +60,8 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
                         <?php echo $entry['blurb'] ?>
                     </p>
                 </div>
-                <a class="boxes__box--link link" href="<?php echo $entry['link']?>">Read
+                <a class="boxes__box--link link"
+                    href="<?php echo $entry['link']?>">Read
                     more</a>
 
             </div>
@@ -71,7 +77,8 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
     <p>
         Become a member or supporter today!
     </p>
-    <a type="button" class="button red button__ride" href="<?php echo get_post_meta($post->ID, "home_action_link", true); ?>">
+    <a type="button" class="button red button__ride"
+        href="<?php echo get_post_meta($post->ID, "home_action_link", true); ?>">
         Join the Condors
     </a>
 </div>

@@ -10,7 +10,8 @@
 get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 <div class="faq__head--wrap">
     <div class="faq__head--hill">
-        <img class="faq__head--bike" src="<?php bloginfo('template_url'); ?>/assets/images/bike.png" />
+        <img class="faq__head--bike"
+            src="<?php bloginfo('template_url'); ?>/assets/images/bike.png" />
     </div>
 
 </div>
@@ -33,7 +34,8 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
         <p class="prose">
             <?php echo get_post_meta($post->ID, "faq_intro", true); ?>
         </p>
-        <img title="Home" src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
+        <img title="Home"
+            src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
     </div>
 </div>
 
@@ -46,11 +48,11 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
         $even = !$even;
         $question = $answer = '';
         if (isset($entry['question'])) {
-            $question = esc_html($entry['question']);
+            $question = $entry['question'];
         }
         
         if (isset($entry['answer'])) {
-            $answer = esc_html($entry['answer']);
+            $answer = $entry['answer'];
         } ?>
     <div class="faq__question--container--large">
         <div class="faq__question--container">
