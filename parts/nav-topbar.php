@@ -15,11 +15,14 @@
                 if (is_user_logged_in()) {
                     ?>
 				<a
-					href="<?php echo MeprOptions::fetch()->account_page_url(); ?>">Account</a>
+					href="<?php echo MeprOptions::fetch()->account_page_url(); ?>">My
+					account</a>
 				<?php
                 } else {
                     ?>
-				<a href="/login">Sign in</a> <?php
+				<a
+					href="<?php echo MeprOptions::fetch()->login_page_url(); ?>">Sign
+					in</a> <?php
                 }
                 ?>
 			</div>

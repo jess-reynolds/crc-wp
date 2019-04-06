@@ -25,19 +25,22 @@
 	<?php if (! function_exists('has_site_icon') || ! has_site_icon()) {
     ?>
 	<!-- Icons & Favicons -->
-	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
-	<link href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-icon-touch.png"
-	 rel="apple-touch-icon" />
+	<link rel="icon"
+		href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+	<link
+		href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-icon-touch.png"
+		rel="apple-touch-icon" />
 	<?php
 } ?>
 
-	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+	<link rel="pingback"
+		href="<?php bloginfo('pingback_url'); ?>">
 
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
 
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-	 crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 	<?php wp_head(); ?>
 
@@ -83,7 +86,20 @@
 				<?php wp_nav_menu(array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav__offcanvas' )); ?>
 				<div class="nav__offcanvas--item">
 					<div>
-						<a href="/login">Sign in</a>
+						<?php
+                if (is_user_logged_in()) {
+                    ?>
+						<a
+							href="<?php echo MeprOptions::fetch()->account_page_url(); ?>">My
+							account</a>
+						<?php
+                } else {
+                    ?>
+						<a
+							href="<?php echo MeprOptions::fetch()->login_page_url(); ?>">Sign
+							in</a> <?php
+                }
+                ?>
 					</div>
 				</div>
 				<div class="nav__offcanvas--close" onclick="hamburgerClick()">
