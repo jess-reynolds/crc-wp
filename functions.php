@@ -48,6 +48,8 @@ require_once(get_template_directory().'/functions/translation/translation.php');
 
 require_once(get_template_directory().'/custom-fields.php');
 
+require_once(get_template_directory().'/account-tabs.php');
+
 add_action('init', 'register_footer_menu');
 function register_footer_menu()
 {
