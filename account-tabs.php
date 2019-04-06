@@ -27,8 +27,7 @@ function mepr_add_tabs_content($action)
 {
     if ($action == 'membership-card'): ?>
 
-<img class="account__membership-card"
-    src="<?php echo get_bloginfo('template_url') ?>/membership-card.php" />
+<img class="account__membership-card" src="?membership-card" />
 <?php endif;
 }
     add_action('mepr_account_nav_content', 'mepr_add_tabs_content');
