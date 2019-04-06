@@ -16,8 +16,11 @@ if ($user !== false && isset($user->ID)) {
 
         $font = get_template_directory() . "/assets/fonts/opensans-regular.ttf";
 
-        imagettftext($my_img, 50, 0, 350, 320, $black, $font, $user->get_full_name());
-        imagettftext($my_img, 50, 0, 250, 420, $black, $font, $sub->expires_at);
+        imagestring($my_img, 5, 450, 300, $user->get_full_name(), $black);
+        imagestring($my_img, 5, 450, 320, $sub->expires_at, $black);
+
+        //imagettftext($my_img, 50, 0, 350, 320, $black, $font, $user->first_name);
+        //imagettftext($my_img, 50, 0, 250, 420, $black, $font, $sub->expires_at);
 
         header("Content-type: image/png");
         imagepng($my_img);

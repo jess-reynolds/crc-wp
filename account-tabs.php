@@ -15,7 +15,9 @@ function mepr_add_some_tabs($user)
     $support_active = (isset($_GET['action']) && $_GET['action'] == 'membership-card')?'mepr-active-nav-tab':''; ?>
 <span
     class="mepr-nav-item membership-card <?php echo $support_active; ?>">
-    <a href="/account/?action=membership-card">Membership card</a>
+    <a
+        href="<?php echo MeprOptions::fetch()->account_page_url(); ?>?action=membership-card">Membership
+        card</a>
 </span>
 <?php
 }

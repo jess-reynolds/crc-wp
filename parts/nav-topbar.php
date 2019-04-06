@@ -2,7 +2,7 @@
 	<div class="nav__bar">
 		<div class="nav__container">
 			<div class="menu-item">
-				<a href="/">
+				<a href="<?php echo get_home_url() ?>">
 					<img title="Home"
 						src="<?php echo get_bloginfo('template_url') ?>/assets/images/icon-club.png" />
 				</a>
@@ -14,7 +14,8 @@
 				<?php
                 if (is_user_logged_in()) {
                     ?>
-				<a href="/account">Account</a>
+				<a
+					href="<?php echo MeprOptions::fetch()->account_page_url(); ?>">Account</a>
 				<?php
                 } else {
                     ?>
