@@ -9,16 +9,19 @@
  
 get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<section class="header--container pink"
-	style="background-image: linear-gradient(rgba(232, 110, 178, 0.72), rgba(100, 35, 109, 0.72)), linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url('<?php echo get_post_meta($post->ID, "home_hero", true); ?>')">
-	<div class="header--header">
+<section class="home--container pink"
+	style="background-image: linear-gradient(rgba(0, 0, 0, 0.72), rgba(255, 64, 170, 0.72)), linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url('<?php echo get_post_meta($post->ID, "home_hero", true); ?>')">
+	<div class="home--header">
 		<?php get_template_part('parts/nav', 'topbar'); ?>
 	</div>
-	<div class="header--inside">
-		<div class="header--text">
+	<div class="home--inside">
+		<div class="home--text">
 			<img
 				src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
 			<h1 class="home__logo">condors</h1>
+		</div>
+		<div class="home--subtitle">
+			<h3>Oxford's friendliest<br>cycling club</h3>
 		</div>
 	</div>
 </section>

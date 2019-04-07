@@ -12,12 +12,12 @@ Copyright: 2004-2013, Caseproof, LLC
 //ADD A SUPPORT TAB TO THE NAV MENU
 function mepr_add_some_tabs($user)
 {
-    $support_active = (isset($_GET['action']) && $_GET['action'] == 'membership-card')?'mepr-active-nav-tab':''; ?>
+    $support_active = (isset($_GET['action']) && $_GET['action'] == 'membership-cards')?'mepr-active-nav-tab':''; ?>
 <span
-    class="mepr-nav-item membership-card <?php echo $support_active; ?>">
+    class="mepr-nav-item membership-cards <?php echo $support_active; ?>">
     <a
-        href="<?php echo MeprOptions::fetch()->account_page_url(); ?>?action=membership-card">Membership
-        card</a>
+        href="<?php echo MeprOptions::fetch()->account_page_url(); ?>?action=membership-cards">Membership
+        cards</a>
 </span>
 <?php
 }
@@ -27,7 +27,7 @@ add_action('mepr_account_nav', 'mepr_add_some_tabs');
 //ADD THE CONTENT FOR THE NEW SUPPORT TAB ABOVE
 function mepr_add_tabs_content($action)
 {
-    if ($action == 'membership-card'): ?>
+    if ($action == 'membership-cards'): ?>
 
 <img class="account__membership-card" src="?membership-card" />
 <?php endif;
