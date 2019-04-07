@@ -30,7 +30,7 @@
 	</div>
 	<div class="nav__bar--mobile">
 		<div class="menu-item">
-			<a href="/">
+			<a href="<?php echo get_home_url() ?>">
 				<img title="Home"
 					src="<?php echo get_bloginfo('template_url') ?>/assets/images/icon-club.png" />
 			</a>
