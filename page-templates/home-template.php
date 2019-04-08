@@ -21,7 +21,7 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<h1 class="home__logo">condors</h1>
 		</div>
 		<div class="home--subtitle">
-			<h3>Oxford's friendliest<br>cycling club</h3>
+			<h3>Oxford's friendliest<br>cycling club!</h3>
 		</div>
 	</div>
 </section>
