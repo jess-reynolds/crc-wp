@@ -67,7 +67,3 @@ function register_header_menu()
 {
     register_nav_menu('header-menu', __('Header Menu'));
 }
-
-add_filter('template_include', function ($template) {
-    return isset($_GET['membership-card']) ? locate_template(['membership-card.php']) : $template ;
-}, 99);

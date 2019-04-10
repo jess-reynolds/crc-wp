@@ -7,6 +7,8 @@
 						src="<?php echo get_bloginfo('template_url') ?>/assets/images/icon-club.png" />
 				</a>
 			</div>
+		</div>
+		<div class="nav__container">
 			<?php wp_nav_menu(array('theme_location' => 'header-menu', 'items_wrap'=> '%3$s', 'container' => false, 'menu_class' => 'nav__container')); ?>
 		</div>
 		<div class="menu-item">

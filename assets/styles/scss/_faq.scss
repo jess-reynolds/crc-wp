@@ -9,7 +9,7 @@
     &--hill {
       position: absolute;
       transform: skewY(-10deg) translateY(-50%);
-      background-image: linear-gradient(red, $pink);
+      background-image: linear-gradient(#ff4000, $pink);
       width: 100%;
       height: calc(40vh + 25rem);
       min-height: 18rem;
