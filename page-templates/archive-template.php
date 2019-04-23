@@ -9,24 +9,15 @@
 
 get_header(); ?>
 
-<section class="header--container"
-    style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url('<?php echo get_post_meta($post->ID, "boxes_hero", true); ?>')">
+<section class="header--container">
     <div class="header--header">
         <?php get_template_part('parts/nav', 'topbar'); ?>
-    </div>
-    <div class="header--inside">
-        <div class="header--text">
-            <h1>
-                <?php the_title(); ?>
-            </h1>
-        </div>
     </div>
 </section>
 
 <div>
-    <div class="boxes__wrap">
-        <div class="boxes__container">
-            <?php
+
+    <?php
 
     query_posts('post_type=post&showposts=30');
     $first = true;
@@ -34,8 +25,36 @@ get_header(); ?>
     // Start the Loop.
     while (have_posts()) : the_post();
     if ($first): ?>
+    <div class="archive__header--container">
+        <a href="<?php the_permalink() ?>">
+            <img class="archive__header--image"
+                src="<?php the_post_thumbnail_url(null, "full") ?>" />
+        </a>
+
+        <div class="archive__header--title">
+            <a href="<?php echo the_permalink() ?>">
+                <?php the_title() ?>
+            </a>
+        </div>
+
+        <div class="archive__header--text">
+            <p>
+                <?php echo esc_html(get_the_excerpt()) ?>
+            </p>
+        </div>
+        <div class="archive__header--link">
+            <a class="link" href="<?php echo the_permalink() ?>">Read
+                more</a>
+        </div>
+
+    </div>
+
+    <div class="boxes__wrap">
+        <div class="boxes__container">
+
+
+
             <?php else: ?>
-            <?php endif; ?>
 
             <div class="boxes__box--container">
                 <a href="<?php the_permalink() ?>">
@@ -63,12 +82,7 @@ get_header(); ?>
 
             </div>
 
-            <?php
-        
-        $first = false;
-    
-    endwhile; ?>
-
+            <?php endif; $first = false; endwhile; ?>
         </div>
     </div>
 </div>

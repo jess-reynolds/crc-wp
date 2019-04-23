@@ -1,0 +1,33 @@
+.archive {
+  &__header {
+    &--image {
+      width: 100vw;
+      height: 50vh;
+      object-fit: cover;
+    }
+
+    &--title {
+      padding: 3rem 1rem 0 1rem;
+      font-size: 5rem;
+      line-height: 4rem;
+      font-family: "Roboto Condensed", sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.05rem;
+      text-transform: uppercase;
+      text-align: center;
+
+      a {
+        color: $dark;
+      }
+    }
+
+    &--text {
+      padding: 2rem 3rem;
+      text-align: center;
+    }
+
+    &--link {
+      text-align: center;
+    }
+  }
+}
