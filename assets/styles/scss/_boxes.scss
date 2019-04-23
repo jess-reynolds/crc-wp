@@ -21,9 +21,8 @@
 
   &__container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    //grid-template-rows: 30rem;
-    row-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    row-gap: 3rem;
   }
 
   &__box {
@@ -47,8 +46,8 @@
     }
 
     &--title {
-      padding: 2rem 0 0.5rem 0;
-      text-align: center;
+      padding: 2rem 0 1rem 0;
+      text-align: left;
 
       &-a {
         color: $dark;
@@ -56,12 +55,17 @@
     }
 
     &--text {
-      padding: 0.4rem;
-      text-align: center;
+      text-align: left;
+
+      p {
+        font-size: 0.9rem;
+        line-height: 1.4rem;
+      }
     }
 
     &--link {
       padding-top: 0.5rem;
+      text-align: left !important;
     }
   }
 }
