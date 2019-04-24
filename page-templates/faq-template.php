@@ -8,6 +8,31 @@
  */
 
 get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+<script>
+    function faq_click(event) {
+        var block = event.target.closest(".faq__question--container");
+        var answer = block.children[1];
+        var icon = block.children[0].children[1];
+
+        if (getComputedStyle(answer, null).display == "none") {
+            answer.style.display = "block";
+            icon.innerHTML = "";
+        } else {
+            answer.style.display = "none";
+            icon.innerHTML = "+";
+        }
+    }
+
+    function faq_expand() {
+        var blocks = document.getElementsByClassName("faq__question--container");
+        for (var i = 0; i < blocks.length; i++) {
+            blocks[i].children[1].style.display = "block";
+            var icon = blocks[i].children[0].children[1].innerHTML = "";
+        }
+    }
+</script>
+
 <div class="faq__head--wrap">
     <div class="faq__head--hill">
         <img class="faq__head--bike"
@@ -45,12 +70,13 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 </div>
 
 <div class="faq__question--wrap">
+    <div class="faq__expand" onclick="faq_expand()">
+        <span>Expand all</span>
+    </div>
 
     <?php
     $questions = get_post_meta($post->ID, "faq_faq", true);
-    $even = false;
     foreach ((array) $questions as $key => $entry) {
-        $even = !$even;
         $question = $answer = '';
         if (isset($entry['question'])) {
             $question = $entry['question'];
@@ -59,51 +85,19 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
         if (isset($entry['answer'])) {
             $answer = $entry['answer'];
         } ?>
-    <div class="faq__question--container--large">
-        <div class="faq__question--container">
-            <div class="grid-x">
-                <div class="cell small-2">
-                    <?php
-                    if ($even && isset($entry['image'])) {
-                        echo '<img src="'.$entry['image'].'">';
-                    } ?>
-                </div>
-                <div class="cell small-1"></div>
-                <?php
-                    if (!$even) {
-                        echo '<div class="cell small-1"></div>';
-                    } ?>
-                <div class="cell small-5">
-                    <h2>
-                        <?php echo $question; ?>
-                    </h2>
-                    <p class="prose">
-                        <?php echo $answer; ?>
-                    </p>
-                </div>
-                <div class="cell small-1"></div>
-                <div class="cell small-2">
-                    <?php
-                    if (!$even && isset($entry['image'])) {
-                        echo '<img src="'.$entry['image'].'">';
-                    } ?>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="faq__question--container--small">
-        <div class="faq__question--container">
+
+    <div class="faq__question--container">
+        <div class="faq__question--q" onclick="faq_click(event)">
             <h2>
                 <?php echo $question; ?>
             </h2>
+            <span class="icon">+</span>
+        </div>
+        <div class="faq__question--a">
             <p class="prose">
                 <?php echo $answer; ?>
             </p>
-            <?php
-                    if (isset($entry['image']) && $entry['image'] != '') {
-                        echo '<div class="faq__question--image"><img src="'.$entry['image'].'"></div>';
-                    } ?>
         </div>
     </div>
 
