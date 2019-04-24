@@ -7,6 +7,14 @@
     list-style-type: none;
     margin: 0;
     flex-grow: 1;
+
+    li {
+      border-right: 1px solid white;
+    }
+
+    li:last-child {
+      border: none;
+    }
   }
 
   &__bar {
@@ -16,7 +24,6 @@
 
     .menu-item {
       padding: 0 1rem;
-      border-right: 1px solid white;
 
       a {
         color: white;
