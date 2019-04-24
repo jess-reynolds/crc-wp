@@ -26,8 +26,8 @@
     align-items: stretch;
     gap: 1rem;
     max-height: 30rem;
-    margin-top: -10vh;
     z-index: 1;
+    padding: 1rem 1rem 3rem 1rem;
 
     @media screen and (max-width: $mobile-width) {
       gap: 0.5rem;

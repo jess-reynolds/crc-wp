@@ -31,6 +31,12 @@ function crc_register_faq_fields()
         'id'         => $prefix . 'intro',
         'type'       => 'textarea',
     ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Image', 'cmb2'),
+        'id'         => $prefix . 'image',
+        'type'       => 'file',
+    ));
     
     $group_field_id = $fields->add_field(array(
         'name'       => esc_html__('Questions and answers', 'cmb2'),
