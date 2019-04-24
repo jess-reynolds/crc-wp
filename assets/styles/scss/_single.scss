@@ -1,0 +1,22 @@
+.single {
+  &__content {
+    padding: 2rem;
+    margin: 0;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 1.1rem;
+    line-height: 1.9em;
+    color: $dark;
+
+    @media screen and (max-width: $mobile-width) {
+      font-size: 0.9rem;
+    }
+
+    img {
+      display: block;
+      padding: 5rem 1rem;
+      margin: auto;
+      width: 100%;
+      max-width: 40rem;
+    }
+  }
+}

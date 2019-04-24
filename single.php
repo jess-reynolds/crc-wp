@@ -1,32 +1,34 @@
-<?php 
+<?php
 /**
  * The template for displaying all single posts and attachments
  */
 
 get_header(); ?>
-			
-<div class="content">
 
-	<div class="inner-content grid-x grid-margin-x grid-padding-x">
+<section class="header--container plans__hero">
+	<div class="header--header">
+		<?php get_template_part('parts/nav', 'topbar'); ?>
+	</div>
+</section>
 
-		<main class="main small-12 medium-8 large-8 cell" role="main">
-		
-		    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		
-		    	<?php get_template_part( 'parts/loop', 'single' ); ?>
-		    	
-		    <?php endwhile; else : ?>
-		
-		   		<?php get_template_part( 'parts/content', 'missing' ); ?>
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		    <?php endif; ?>
+<div class="header--image">
+	<img class="archive__header--image"
+		src="<?php the_post_thumbnail_url(null, "full") ?>" />
+</div>
 
-		</main> <!-- end #main -->
+<div class="header--text2">
+	<h1>
+		<?php the_title(); ?>
+	</h1>
+	<p>
+		<?php the_date(); ?>
+	</p>
+</div>
 
-		<?php get_sidebar(); ?>
+<div class="single__content">
+	<?php the_content(); ?>
+</div>
 
-	</div> <!-- end #inner-content -->
-
-</div> <!-- end #content -->
-
-<?php get_footer(); ?>
+<?php endwhile; endif; get_footer();

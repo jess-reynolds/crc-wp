@@ -9,19 +9,24 @@
 
 get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<section class="header--container"
-    style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)), url('<?php echo get_post_meta($post->ID, "boxes_hero", true); ?>')">
+<section class="header--container">
     <div class="header--header">
         <?php get_template_part('parts/nav', 'topbar'); ?>
     </div>
-    <div class="header--inside">
-        <div class="header--text">
-            <h1>
-                <?php the_title(); ?>
-            </h1>
-        </div>
-    </div>
 </section>
+
+<div class="header--image">
+    <img
+        src="<?php echo get_post_meta($post->ID, "boxes_hero", true); ?>">
+</div>
+
+<div class="header--text">
+    <h1>
+        <?php the_title(); ?>
+    </h1>
+</div>
+
+
 
 <div class="layout__thin">
 
