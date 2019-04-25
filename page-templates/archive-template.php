@@ -7,6 +7,7 @@
  * @since 1.0
  */
 
+
 get_header(); ?>
 
 <section class="header--container">
@@ -19,7 +20,8 @@ get_header(); ?>
 
     <?php
 
-    query_posts('post_type=post&showposts=30');
+    query_posts('post_type=post&post_status=publish&posts_per_page=25');
+
     $first = true;
 
     // Start the Loop.
@@ -103,4 +105,20 @@ get_header(); ?>
 
 
 
-<?php get_footer();
+<?php
+
+query_posts('post_type=post&post_status=publish&posts_per_page=24&offset=25');
+
+wp_enqueue_script('jquery');
+wp_register_script('load-more', get_template_directory_uri() . '/load-more.js', array('jquery'));
+
+wp_localize_script('load-more', 'params', array(
+    'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
+    'posts' => json_encode($wp_query->query_vars),
+    'current_page' => get_query_var('paged') ? get_query_var('paged') : 1,
+    'max_page' => $wp_query->max_num_pages
+));
+
+wp_enqueue_script('load-more');
+
+get_footer();

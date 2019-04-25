@@ -67,3 +67,22 @@ function register_header_menu()
 {
     register_nav_menu('header-menu', __('Header Menu'));
 }
+
+function load_news_ajax_handler()
+{
+    $args = json_decode(stripslashes($_POST['query']), true);
+    $args['paged'] = $_POST['page'] + 1;
+ 
+    query_posts($args);
+ 
+    if (have_posts()) {
+        while (have_posts()) {
+            the_post();
+            get_template_part('parts/page', 'box');
+        }
+    }
+    die;
+}
+  
+add_action('wp_ajax_loadmore', 'load_news_ajax_handler');
+add_action('wp_ajax_nopriv_loadmore', 'load_news_ajax_handler');

@@ -3,7 +3,7 @@
     display: block;
     max-width: 100rem;
     margin: auto;
-    padding: 2rem;
+    padding: 4rem;
     font-family: Georgia, Times, "Times New Roman", serif;
     font-size: 1.1rem;
     line-height: 1.9em;
@@ -11,6 +11,10 @@
 
     @media screen and (max-width: $mobile-width) {
       font-size: 0.9rem;
+    }
+
+    p {
+      padding-bottom: 2rem;
     }
 
     img {

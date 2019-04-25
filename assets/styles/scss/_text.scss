@@ -49,6 +49,7 @@ p {
   font-size: 1.1rem;
   line-height: 1.9em;
   color: $dark;
+  word-wrap: break-word;
 
   &.prose {
     line-height: 2em;
