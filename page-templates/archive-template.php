@@ -20,7 +20,7 @@ get_header(); ?>
 
     <?php
 
-    query_posts('post_type=post&post_status=publish&posts_per_page=25');
+    query_posts('post_type=post&post_status=publish&posts_per_page=24');
 
     $first = true;
 
@@ -106,8 +106,6 @@ get_header(); ?>
 
 
 <?php
-
-query_posts('post_type=post&post_status=publish&posts_per_page=24&offset=25');
 
 wp_enqueue_script('jquery');
 wp_register_script('load-more', get_template_directory_uri() . '/load-more.js', array('jquery'));

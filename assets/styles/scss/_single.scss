@@ -2,7 +2,6 @@
   &__content {
     display: block;
     max-width: 100rem;
-    margin: auto;
     padding: 4rem;
     font-family: Georgia, Times, "Times New Roman", serif;
     font-size: 1.1rem;
@@ -15,14 +14,16 @@
 
     p {
       padding-bottom: 2rem;
+      margin: 0 15rem;
     }
 
     img {
       display: block;
-      padding: 5rem 1rem;
-      margin: auto;
+      margin: 3rem auto;
+      height: 50rem;
       width: 100%;
-      max-width: 50rem;
+      //max-height: 50rem;
+      object-fit: contain;
     }
   }
 }

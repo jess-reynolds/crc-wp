@@ -46,42 +46,27 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <?php
     $banners = get_post_meta($post->ID, "home_banners", true);
-    foreach ((array) $banners as $key => $entry) {
-        $title = $blurb = $link = $image = '';
-        if (isset($entry['title'])) {
-            $title = esc_html($entry['title']);
-        }
-        
-        if (isset($entry['blurb'])) {
-            $blurb = esc_html($entry['blurb']);
-        }
+    foreach ((array) $banners as $key => $entry):
+        $link = get_permalink($entry['link'][0]);
+        ?>
 
-        if (isset($entry['link']) && sizeof($entry['link']) > 0) {
-            $link = $entry['link'][0];
-        }
-        
-        if (isset($entry['image'])) {
-            $image = esc_html($entry['image']);
-        } ?>
-
-<section class="home__banner--container" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)),
-        url('<?php echo $image; ?>');">
+<section class="home__banner--container">
+	<div class="home__banner--image">
+		<a href="<?php echo $link ?>">
+			<img
+				src="<?php echo $entry['image'] ?>">
+		</a>
+	</div>
 	<div class="home__banner--inside">
-		<div class="home__banner--text">
-			<h1>
-				<?php echo $title; ?>
-			</h1>
-			<p>
-				<?php echo $blurb; ?>
-			</p>
-			<a class="link"
-				href="<?php echo get_permalink($link); ?>">Read
-				more</a>
-		</div>
+		<h2>
+			<?php echo $entry['title']; ?>
+		</h2>
+		<p>
+			<?php echo $entry['blurb']; ?>
+		</p>
+		<a class="link" href="<?php echo $link ?>">Read
+			more</a>
 	</div>
 </section>
 
-<?php
-    } ?>
-
-<?php endwhile; endif; get_footer();
+<?php endforeach; endwhile; endif; get_footer();
