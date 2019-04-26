@@ -10,9 +10,9 @@
       flex-direction: row;
       border-top: 1px solid #ccc;
 
-      &:nth-child(even) {
-        flex-direction: row-reverse;
-      }
+      //&:nth-child(even) {
+      //flex-direction: row-reverse;
+      //}
 
       @media screen and (max-width: $mobile-width) {
         flex-direction: column !important;

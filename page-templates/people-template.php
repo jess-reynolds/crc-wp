@@ -30,11 +30,6 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
     </div>
 </section>
 
-<div class="faq__head--image">
-    <img
-        src="<?php echo get_post_meta($post->ID, "people_image", true) ?>">
-</div>
-
 <div class="layout__thin">
     <div class="faq__intro">
         <p class="prose">
