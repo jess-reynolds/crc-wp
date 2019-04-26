@@ -60,11 +60,18 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
         <div class="people__person--body">
             <h2>
                 <?php echo $entry['p_name'] ?>
-
             </h2>
+            <h3>
+                <?php echo $entry['title'] ?>
+            </h3>
+            <a class="people__person--email"
+                href="mailto:<?php echo $entry['email'] ?>">
+                <?php echo $entry['email'] ?>
+            </a>
             <p class="prose">
                 <?php echo $entry['bio'] ?>
             </p>
+
         </div>
     </div>
 

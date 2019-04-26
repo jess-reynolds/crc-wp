@@ -111,6 +111,18 @@ function crc_register_people_fields()
         'id'   => 'p_name',
         'type' => 'text',
     ));
+
+    $fields->add_group_field($group_field_id, array(
+        'name' => 'Title',
+        'id'   => 'title',
+        'type' => 'text',
+    ));
+
+    $fields->add_group_field($group_field_id, array(
+        'name' => 'Email',
+        'id'   => 'email',
+        'type' => 'text',
+    ));
     
     $fields->add_group_field($group_field_id, array(
         'name' => 'Bio',

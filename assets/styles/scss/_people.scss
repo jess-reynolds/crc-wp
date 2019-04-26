@@ -37,17 +37,42 @@
       }
     }
 
+    &--email {
+      font-family: Georgia, Times, "Times New Roman", serif;
+      margin: 1rem;
+      vertical-align: text-bottom;
+    }
+
     &--body {
       margin: 4rem;
-      @media screen and (max-width: $mobile-width) {
-        margin-top: 0;
-      }
 
       h2 {
-        margin-bottom: 1rem;
-        @media screen and (max-width: $mobile-width) {
+        margin: 1rem 0;
+      }
+
+      h3 {
+        margin: 1rem 0;
+        display: inline;
+      }
+
+      p {
+        margin-top: 3rem;
+      }
+
+      @media screen and (max-width: $mobile-width) {
+        margin-top: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
           text-align: center;
-          margin-bottom: 3rem;
+        }
+
+        h3 {
+          display: block;
+          margin: 0.5rem;
         }
       }
     }
