@@ -69,6 +69,62 @@ function crc_register_faq_fields()
     ));
 }
 
+add_action('cmb2_admin_init', 'crc_register_people_fields');
+
+function crc_register_people_fields()
+{
+    $prefix = 'people_';
+
+    $fields = new_cmb2_box(array(
+        'id'            => $prefix . 'metabox',
+        'title'         => esc_html__('People data', 'cmb2'),
+        'object_types'  => array( 'page' ),
+        'show_on'       => array( 'key' => 'page-template', 'value' =>  'page-templates/people-template.php' ),
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Introduction', 'cmb2'),
+        'id'         => $prefix . 'intro',
+        'type'       => 'textarea',
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Image', 'cmb2'),
+        'id'         => $prefix . 'image',
+        'type'       => 'file',
+    ));
+    
+    $group_field_id = $fields->add_field(array(
+        'name'       => esc_html__('People', 'cmb2'),
+        'id'         => $prefix . 'people',
+        'type'       => 'group',
+        'options'     => array(
+            'group_title'   => 'Person {#}',
+            'closed'        => true,
+            'sortable'      => true,
+        ),
+        
+    ));
+    
+    $fields->add_group_field($group_field_id, array(
+        'name' => 'Name',
+        'id'   => 'p_name',
+        'type' => 'text',
+    ));
+    
+    $fields->add_group_field($group_field_id, array(
+        'name' => 'Bio',
+        'id'   => 'bio',
+        'type' => 'textarea',
+    ));
+    
+    $fields->add_group_field($group_field_id, array(
+        'name' => 'Image',
+        'id'   => 'image',
+        'type' => 'file',
+    ));
+}
+
 add_action('cmb2_admin_init', 'crc_register_boxes_fields');
 
 function crc_register_boxes_fields()
