@@ -1,11 +1,10 @@
-.button {
-  &__ride {
-    padding: 1.2rem 2rem;
-    text-transform: uppercase;
-    font-family: "Work Sans", sans-serif;
-    font-weight: 600;
-    font-size: 0.9rem;
-    letter-spacing: 0.08rem;
-    margin: 0;
-  }
+.button,
+.mepr-price-box-button > a {
+  padding: 1.2rem 2rem;
+  text-transform: uppercase;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.08rem;
+  margin: 0;
 }

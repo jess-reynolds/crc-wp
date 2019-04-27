@@ -32,26 +32,26 @@ function mepr_add_tabs_content($action)
     $active_products = $user->active_product_subscriptions('transactions');
 
     foreach ($active_products as $sub):
-        $my_img = imagecreatefrompng(get_template_directory() . "/assets/images/membership-card.png");
+    $my_img = imagecreatefrompng(get_template_directory() . "/assets/images/membership-card.png");
+    imageAlphaBlending($my_img, true);
+    imageSaveAlpha($my_img, true);
+
     $height = imagesy($my_img);
     $width = imagesx($my_img);
 
     $black = imagecolorallocate($my_img, 0, 0, 0);
 
-    $font = get_template_directory() . "/assets/fonts/opensans-regular.ttf";
+    $font = get_template_directory() . "/assets/fonts/VT323-Regular.ttf";
 
-    imagestring($my_img, 5, 450, 300, $user->get_full_name(), $black);
-    imagestring($my_img, 5, 450, 320, $sub->expires_at, $black);
-
-    //imagettftext($my_img, 50, 0, 350, 320, $black, $font, $user->first_name);
-    //imagettftext($my_img, 50, 0, 250, 420, $black, $font, $sub->expires_at);
+    imagettftext($my_img, 50, 0, 140, 500, $black, $font, strtoupper($user->get_full_name()));
+    imagettftext($my_img, 35, 0, 130, 715, $black, $font, date("j F Y", strtotime($sub->expires_at)));
 
     ob_start();
     imagepng($my_img);
     $image_data = ob_get_contents();
     ob_end_clean();
     $image_data_base64 = base64_encode($image_data);
-
+            
     imagecolordeallocate($my_img, $black);
     imagedestroy($my_img); ?>
 

@@ -1,6 +1,14 @@
 @import "variables";
 
 .join {
+  &__content {
+    background-color: #1a1a16;
+
+    * {
+      color: white !important;
+    }
+  }
+
   &__wrap {
     display: flex;
     flex-direction: column;

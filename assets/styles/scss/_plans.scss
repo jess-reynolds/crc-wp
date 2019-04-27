@@ -1,6 +1,11 @@
 @import "variables";
 
 .plans {
+  &__wrap {
+    margin: 0 auto 5rem auto;
+    max-width: 60rem;
+  }
+
   &__hero {
     background-color: $pink;
   }
@@ -23,7 +28,6 @@
 
   &__icon {
     margin: 1rem auto;
-    filter: brightness(0);
     height: 2rem;
   }
 }

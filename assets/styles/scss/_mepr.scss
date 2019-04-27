@@ -4,22 +4,17 @@
   }
 
   &-price {
-    $gap: 1rem;
-
     &-box {
       padding-top: 0.2rem;
       display: grid;
-      gap: $gap;
       justify-items: center;
       width: 100%;
-      background-color: white;
       font-family: Georgia, Times, "Times New Roman", serif;
       font-size: 1rem;
       text-align: center;
 
       &-head {
         display: grid;
-        gap: $gap;
         justify-items: center;
       }
 
@@ -37,21 +32,13 @@
       }
 
       &-button {
-        display: flex;
+        margin: 1.5rem 0;
 
         a {
-          border: 1px solid $darker-pink;
-          padding: 1.2rem 1.1rem;
-          color: $darker-pink;
-          font-family: "Roboto Condensed", sans-serif;
-          font-weight: 600;
-          font-size: 1rem;
-          text-transform: uppercase;
+          background-color: $dark-pink;
 
           &:hover {
-            background-color: $dark-pink;
-            border-color: $dark-pink;
-            color: white;
+            background-color: $darker-pink;
           }
         }
       }

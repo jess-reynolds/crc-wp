@@ -6,17 +6,22 @@
  *
  * For more info: https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
+
+global $hide_join;
+
+ if (!$hide_join):
  ?>
 
 <div class="footer__join">
 	<h3>
 		Become a member or supporter today!
 	</h3>
-	<a type="button" class="button red button__ride"
-		href="<?php echo get_post_meta($post->ID, "home_action_link", true); ?>">
+	<a type="button" class="button red button__ride" href="/join">
 		Join the Condors &nbsp;&nbsp;<i class="fas fa-long-arrow-alt-right"></i>
 	</a>
 </div>
+
+<?php endif; ?>
 
 <footer class="footer" role="contentinfo">
 	<div class="footer__inside">
