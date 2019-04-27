@@ -77,16 +77,4 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
     </div>
 </div>
 
-
-<div class="join__wrap">
-    <p>
-        Become a member or supporter today!
-    </p>
-    <a type="button" class="button red button__ride"
-        href="<?php echo get_post_meta($post->ID, "home_action_link", true); ?>">
-        Join the Condors
-    </a>
-</div>
-
-
 <?php endwhile; endif; get_footer();

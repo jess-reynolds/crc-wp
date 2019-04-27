@@ -89,22 +89,6 @@ get_header(); ?>
     </div>
 </div>
 
-
-<div class="join__wrap">
-    <p>
-        Become a member or supporter today!
-    </p>
-    <a type="button" class="button red button__ride"
-        href="<?php echo get_post_meta($post->ID, "home_action_link", true); ?>">
-        Join the Condors
-    </a>
-</div>
-
-
-
-
-
-
 <?php
 
 wp_enqueue_script('jquery');

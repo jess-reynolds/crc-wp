@@ -63,7 +63,7 @@
   &__question {
     &--wrap {
       margin-top: 3rem;
-      width: 100vw;
+      width: 100%;
       max-width: 60rem;
       display: block;
       margin: auto;
@@ -101,7 +101,6 @@
 
     &--a {
       display: none;
-      padding-top: 1rem;
     }
 
     &--image {

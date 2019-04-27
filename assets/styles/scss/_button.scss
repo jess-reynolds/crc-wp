@@ -1,9 +1,11 @@
 .button {
   &__ride {
-    padding: 1.5rem 2rem;
+    padding: 1.2rem 2rem;
     text-transform: uppercase;
     font-family: "Work Sans", sans-serif;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.08rem;
+    margin: 0;
   }
 }
