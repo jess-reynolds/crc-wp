@@ -69,6 +69,62 @@ function crc_register_faq_fields()
     ));
 }
 
+add_action('cmb2_admin_init', 'crc_register_routes_fields');
+
+function crc_register_routes_fields()
+{
+    $prefix = 'routes_';
+
+    $fields = new_cmb2_box(array(
+        'id'            => $prefix . 'metabox',
+        'title'         => esc_html__('Route data', 'cmb2'),
+        'object_types'  => array( 'page' ),
+        'show_on'       => array( 'key' => 'page-template', 'value' =>  'page-templates/route-template.php' ),
+    ));
+
+    $fields->add_field(array(
+        'name'       => esc_html__('Introduction', 'cmb2'),
+        'id'         => $prefix . 'intro',
+        'type'       => 'textarea',
+    ));
+
+    $group_field_id = $fields->add_field(array(
+        'name'       => esc_html__('Routes', 'cmb2'),
+        'id'         => $prefix . 'routes',
+        'type'       => 'group',
+        'options'     => array(
+            'group_title'   => 'Question {#}',
+            'closed'        => true,
+            'sortable'      => true,
+        ),
+        
+    ));
+    
+    $fields->add_group_field($group_field_id, array(
+        'name' => 'Name',
+        'id'   => 'name',
+        'type' => 'text',
+    ));
+    
+    $fields->add_group_field($group_field_id, array(
+        'name' => 'Description',
+        'id'   => 'description',
+        'type' => 'textarea',
+    ));
+
+    $fields->add_group_field($group_field_id, array(
+        'name' => 'Strava',
+        'id'   => 'strava',
+        'type' => 'text',
+    ));
+    
+    $fields->add_group_field($group_field_id, array(
+        'name' => 'GPX',
+        'id'   => 'gpx',
+        'type' => 'file',
+    ));
+}
+
 add_action('cmb2_admin_init', 'crc_register_sponsor_fields');
 
 function crc_register_sponsor_fields()

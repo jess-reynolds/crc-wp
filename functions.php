@@ -104,3 +104,10 @@ function create_sponsor_post_type()
     );
 }
   add_action('init', 'create_sponsor_post_type');
+
+  add_filter('upload_mimes', 'my_myme_types', 1, 1);
+    function my_myme_types($mime_types)
+    {
+        $mime_types['gpx'] = 'application/gpx+xml'; // Adding .json extension
+        return $mime_types;
+    }
