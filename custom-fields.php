@@ -69,7 +69,42 @@ function crc_register_faq_fields()
     ));
 }
 
-add_action('cmb2_admin_init', 'crc_register_people_fields');
+add_action('cmb2_admin_init', 'crc_register_sponsor_fields');
+
+function crc_register_sponsor_fields()
+{
+    $prefix = 'sponsors_';
+
+    $fields = new_cmb2_box(array(
+        'id'            => $prefix . 'metabox',
+        'title'         => esc_html__('Sponsor data', 'cmb2'),
+        'object_types'  => array( 'sponsor' ),
+    ));
+    
+    $group_field_id = $fields->add_field(array(
+        'name'       => esc_html__('Sponsors', 'cmb2'),
+        'id'         => $prefix . 'sponsors',
+        'type'       => 'group',
+        'options'     => array(
+            'group_title'   => 'Sponsor {#}',
+            'closed'        => true,
+            'sortable'      => true,
+        ),
+        
+    ));
+    
+    $fields->add_group_field($group_field_id, array(
+        'name' => 'URL',
+        'id'   => 'url',
+        'type' => 'text',
+    ));
+    
+    $fields->add_group_field($group_field_id, array(
+        'name' => 'Image',
+        'id'   =>  'image',
+        'type' => 'file',
+    ));
+}
 
 function crc_register_people_fields()
 {

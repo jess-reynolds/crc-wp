@@ -86,3 +86,21 @@ function load_news_ajax_handler()
   
 add_action('wp_ajax_loadmore', 'load_news_ajax_handler');
 add_action('wp_ajax_nopriv_loadmore', 'load_news_ajax_handler');
+
+
+function create_sponsor_post_type()
+{
+    register_post_type(
+        'sponsor',
+        array(
+        'labels' => array(
+          'name' => __('Sponsors'),
+          'singular_name' => __('Sponsor')
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'thumbnail'),
+      )
+    );
+}
+  add_action('init', 'create_sponsor_post_type');
