@@ -33,60 +33,55 @@ get_header(); ?>
                 src="<?php the_post_thumbnail_url(null, "full") ?>" />
         </a>
 
-        <div class="archive__header--title">
-            <a href="<?php echo the_permalink() ?>">
+        <a href="<?php echo the_permalink() ?>">
+            <h1 class="condensed">
                 <?php the_title() ?>
-            </a>
-        </div>
+            </h1>
+        </a>
 
-        <div class="archive__header--text">
-            <p>
-                <?php echo esc_html(get_the_excerpt()) ?>
-            </p>
-        </div>
+        <p class="archive__header--text">
+            <?php echo esc_html(get_the_excerpt()) ?>
+        </p>
         <div class="archive__header--link">
             <a class="link" href="<?php echo the_permalink() ?>">Read
                 more</a>
         </div>
-
     </div>
 
-    <div class="boxes__wrap">
-        <div class="boxes__container">
+</div>
+
+<div class="boxes__wrap">
+    <div class="boxes__container">
 
 
 
-            <?php else: ?>
+        <?php else: ?>
 
-            <div class="boxes__box--container">
-                <a href="<?php the_permalink() ?>">
-                    <img class="boxes__box--image"
-                        src="<?php the_post_thumbnail_url(null, "full") ?>" />
+        <div class="boxes__box--container">
+            <a href="<?php the_permalink() ?>">
+                <img class="boxes__box--image"
+                    src="<?php the_post_thumbnail_url(null, "full") ?>" />
+            </a>
+
+            <h3 class="boxes__box--title">
+                <a class="boxes__box--title-a"
+                    href="<?php echo the_permalink() ?>">
+                    <?php the_title() ?>
                 </a>
+            </h3>
 
-                <div class="boxes__box--title">
-                    <h3>
-                        <a class="boxes__box--title-a"
-                            href="<?php echo the_permalink() ?>">
-                            <?php the_title() ?>
-                        </a>
-                    </h3>
-                </div>
+            <p class="boxes__box--text">
+                <?php echo esc_html(get_the_excerpt()) ?>
+            </p>
+            <a class="boxes__box--link link"
+                href="<?php echo the_permalink() ?>">Read
+                more</a>
 
-                <div class=" boxes__box--text">
-                    <p>
-                        <?php echo esc_html(get_the_excerpt()) ?>
-                    </p>
-                </div>
-                <a class="boxes__box--link link"
-                    href="<?php echo the_permalink() ?>">Read
-                    more</a>
-
-            </div>
-
-            <?php endif; $first = false; endwhile; ?>
         </div>
+
+        <?php endif; $first = false; endwhile; ?>
     </div>
+</div>
 </div>
 
 <?php
