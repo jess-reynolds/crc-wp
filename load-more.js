@@ -1,5 +1,3 @@
-console.log("wassup");
-
 jQuery(function($) {
   var canBeLoaded = true;
   var bottomOffset = 3000;
@@ -27,7 +25,6 @@ jQuery(function($) {
       $(document).scrollTop() > $(document).height() - bottomOffset &&
       canBeLoaded
     ) {
-      console.log(params.posts);
       $.ajax({
         url: params.ajaxurl,
         data: data,

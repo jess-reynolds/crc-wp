@@ -11,24 +11,23 @@ get_header(); ?>
 	</div>
 </section>
 
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<div class="single__wrap">
 
-<div class="header--image">
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
 	<img class="archive__header--image"
 		src="<?php the_post_thumbnail_url(null, "full") ?>" />
-</div>
 
-<div class="header--text2">
-	<h1>
+	<h1 class="condensed">
 		<?php the_title(); ?>
 	</h1>
-	<p>
+	<p class="single__date">
 		<?php the_date(); ?>
 	</p>
-</div>
 
-<div class="single__content">
-	<?php the_content(); ?>
+	<div class="single__content prose">
+		<?php the_content(); ?>
+	</div>
 </div>
 
 <?php endwhile; endif; get_footer();

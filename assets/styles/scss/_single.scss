@@ -1,4 +1,14 @@
 .single {
+  &__wrap {
+    margin: 2rem;
+  }
+
+  &__date {
+    text-align: center;
+    font-style: italic;
+    font-size: 1rem;
+  }
+
   &__content {
     display: block;
     max-width: 100rem;
