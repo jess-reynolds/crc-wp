@@ -3,7 +3,7 @@
 .plans {
   &__wrap {
     margin: 0 auto 5rem auto;
-    max-width: 60rem;
+    max-width: 40rem;
   }
 
   &__hero {
@@ -11,19 +11,26 @@
   }
 
   &__container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    padding: 0 2rem;
-    row-gap: 3rem;
+    //display: grid;
+    //grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    //padding: 0 1rem;
+    //row-gap: 3rem;
   }
 
   &__item {
+    &--wrap {
+      padding: 1rem;
+      width: 100%;
+    }
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding: 2rem;
     width: 100%;
+    background-color: #242424;
+    border: 2px solid #555;
   }
 
   &__icon {

@@ -63,21 +63,16 @@ $products = $group->products();
 ?>
     <div class="plans__wrap">
         <div class="plans__container">
-
-            <?php
-
-foreach ($products as $product) {
-    ?>
-            <div class="plans__item">
-                <img class="plans__icon" title="Home"
-                    src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
-                <?php MeprGroupsHelper::group_page_item($product, $group); ?>
+            <?php foreach ($products as $product): ?>
+            <div class="plans__item--wrap">
+                <div class="plans__item">
+                    <img class="plans__icon" title="Home"
+                        src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
+                    <?php MeprGroupsHelper::group_page_item($product, $group); ?>
+                </div>
             </div>
-            <?php
-} ?>
+            <?php endforeach; ?>
         </div>
     </div>
 
-</div>
-
-<?php endwhile; endif; get_footer();
+    <?php endwhile; endif; get_footer();

@@ -46,7 +46,6 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
     $routes = get_post_meta($post->ID, "routes_routes", true);
     foreach ((array) $routes as $key => $entry): ?>
 
-
     <div class="routes--container">
         <div class="routes--body">
             <h3>
