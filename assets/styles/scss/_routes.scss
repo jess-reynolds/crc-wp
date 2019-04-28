@@ -1,0 +1,72 @@
+.routes {
+  &--wrap {
+    max-width: 80rem;
+    margin: auto;
+  }
+
+  &--container {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid #ccc;
+
+    //&:nth-child(even) {
+    //flex-direction: row-reverse;
+    //}
+
+    @media screen and (max-width: $mobile-width) {
+      flex-direction: column !important;
+      align-items: center;
+    }
+  }
+
+  &__files {
+    margin: 0.5rem 0;
+    list-style-type: circle;
+
+    li {
+      display: inline;
+      padding: 0 0.5rem;
+      border-left: 1px solid #ccc;
+
+      &:first-child {
+        padding-left: 0;
+        border-left: none;
+      }
+    }
+  }
+
+  &--image {
+    height: 15rem;
+    width: 15rem;
+    min-height: 15rem;
+    min-width: 15rem;
+    border-radius: 50%;
+    margin: 4rem;
+
+    img {
+      object-fit: cover;
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      filter: grayscale(1);
+    }
+  }
+
+  &--body {
+    margin: 4rem;
+
+    h3 {
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    @media screen and (max-width: $mobile-width) {
+      margin: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

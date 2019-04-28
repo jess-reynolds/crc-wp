@@ -40,33 +40,36 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
     </div>
 </div>
 
-<div class="people__person--wrap">
+<div class="routes--wrap">
 
     <?php
-    $people = get_post_meta($post->ID, "people_people", true);
-    foreach ((array) $people as $key => $entry): ?>
+    $routes = get_post_meta($post->ID, "routes_routes", true);
+    foreach ((array) $routes as $key => $entry): ?>
 
 
-    <div class="people__person--container">
-        <div class="people__person--image">
-            <img
-                src="<?php echo $entry['image'] ?>">
-        </div>
-        <div class="people__person--body">
-            <h2>
-                <?php echo $entry['p_name'] ?>
-            </h2>
+    <div class="routes--container">
+        <div class="routes--body">
             <h3>
-                <?php echo $entry['title'] ?>
+                <?php echo $entry['name'] ?>
             </h3>
-            <a class="people__person--email"
-                href="mailto:<?php echo $entry['email'] ?>">
-                <?php echo $entry['email'] ?>
-            </a>
-            <p class="prose">
-                <?php echo $entry['bio'] ?>
+            <ul class="routes__files">
+            <li>
+                    <a href=<?php echo $entry['strava'] ?>>Strava</a>
+                </li>
+                <li>
+                    <a href=<?php echo $entry['gpx'] ?>>GPX</a>
+                </li>
+                <li>
+                    <a href=<?php echo $entry['tcx'] ?>>TCX</a>
+                </li>
+                <li>
+                    <a href=<?php echo $entry['pdf'] ?>>Route
+                        sheet</a>
+                </li>
+            </ul>
+            <p>
+                <?php echo $entry['description'] ?>
             </p>
-
         </div>
     </div>
 

@@ -92,3 +92,9 @@ p {
   color: $dark-pink;
   text-align: center;
 }
+
+a {
+  &:hover {
+    text-decoration: underline;
+  }
+}

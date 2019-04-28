@@ -79,7 +79,7 @@ function crc_register_routes_fields()
         'id'            => $prefix . 'metabox',
         'title'         => esc_html__('Route data', 'cmb2'),
         'object_types'  => array( 'page' ),
-        'show_on'       => array( 'key' => 'page-template', 'value' =>  'page-templates/route-template.php' ),
+        'show_on'       => array( 'key' => 'page-template', 'value' =>  'page-templates/routes-template.php' ),
     ));
 
     $fields->add_field(array(
@@ -93,7 +93,7 @@ function crc_register_routes_fields()
         'id'         => $prefix . 'routes',
         'type'       => 'group',
         'options'     => array(
-            'group_title'   => 'Question {#}',
+            'group_title'   => 'Route {#}',
             'closed'        => true,
             'sortable'      => true,
         ),
@@ -121,6 +121,18 @@ function crc_register_routes_fields()
     $fields->add_group_field($group_field_id, array(
         'name' => 'GPX',
         'id'   => 'gpx',
+        'type' => 'file',
+    ));
+
+    $fields->add_group_field($group_field_id, array(
+        'name' => 'TCX',
+        'id'   => 'tcx',
+        'type' => 'file',
+    ));
+
+    $fields->add_group_field($group_field_id, array(
+        'name' => 'PDF',
+        'id'   => 'pdf',
         'type' => 'file',
     ));
 }
