@@ -52,19 +52,19 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <?php echo $entry['name'] ?>
             </h3>
             <ul class="routes__files">
-                <?php if (isset($entry['strava'])): ?>
+                <?php if ($entry['strava'] != ""): ?>
                 <li>
                     <a href=<?php echo $entry['strava'] ?>>Strava</a>
                 </li>
-                <?php endif; if (isset($entry['gpx'])): ?>
+                <?php endif; if ($entry['gpx'] != ""): ?>
                 <li>
                     <a href=<?php echo $entry['gpx'] ?>>GPX</a>
                 </li>
-                <?php endif; if (isset($entry['tcx'])): ?>
+                <?php endif; if ($entry['tcx'] != ""): ?>
                 <li>
                     <a href=<?php echo $entry['tcx'] ?>>TCX</a>
                 </li>
-                <?php endif; if (isset($entry['pdf'])): ?>
+                <?php endif; if ($entry['pdf'] != ""): ?>
                 <li>
                     <a href=<?php echo $entry['pdf'] ?>>Route
                         sheet</a>
