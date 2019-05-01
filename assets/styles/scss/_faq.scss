@@ -101,6 +101,11 @@
 
     &--a {
       display: none;
+
+      li {
+        @include p;
+        @include prose;
+      }
     }
 
     &--image {
