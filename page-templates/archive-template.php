@@ -76,4 +76,6 @@ wp_localize_script('load-more', 'params', array(
 
 wp_enqueue_script('load-more');
 
+get_template_part('parts/content', 'join');
+
 get_footer();

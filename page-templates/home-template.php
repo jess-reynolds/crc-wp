@@ -69,4 +69,6 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 	</div>
 </section>
 
-<?php endforeach; endwhile; endif; get_footer();
+<?php endforeach; endwhile; endif;
+get_template_part('parts/content', 'join');
+get_footer();
