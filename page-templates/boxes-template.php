@@ -42,8 +42,11 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
             <?php
     $questions = get_post_meta($post->ID, "boxes_boxes", true);
     foreach ((array) $questions as $key => $entry) {
-        $link = get_permalink($entry['link'][0])
-        ?>
+        if (isset($entry['link'])) {
+            $link = get_permalink($entry['link'][0]);
+        } else {
+            $link = get_permalink($entry['link_external']);
+        } ?>
 
             <div class="boxes__box--container">
                 <a href="<?php echo $link ?>">

@@ -9,10 +9,6 @@
     flex-direction: row;
     border-top: 1px solid #ccc;
 
-    //&:nth-child(even) {
-    //flex-direction: row-reverse;
-    //}
-
     @media screen and (max-width: $mobile-width) {
       flex-direction: column !important;
       align-items: center;
@@ -25,7 +21,7 @@
 
     li {
       display: inline;
-      padding: 0 0.5rem;
+      padding: 0 0.4rem;
       border-left: 1px solid #ccc;
 
       &:first-child {

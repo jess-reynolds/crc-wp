@@ -307,6 +307,12 @@ function crc_register_boxes_fields()
             ),
         ),
     ));
+
+    $fields->add_group_field($group_field_id, array(
+        'name' => 'Link (external)',
+        'id'   => 'link_external',
+        'type'    => 'text_url',
+    ));
 }
 
 
