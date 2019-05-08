@@ -174,6 +174,8 @@ function crc_register_sponsor_fields()
     ));
 }
 
+add_action('cmb2_admin_init', 'crc_register_people_fields');
+
 function crc_register_people_fields()
 {
     $prefix = 'people_';
