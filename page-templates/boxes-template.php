@@ -27,8 +27,6 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
     <div class="boxes__intro">
         <p class="prose"><?php echo get_post_meta($post->ID, "boxes_intro", true); ?>
         </p>
-        <img title="Home"
-            src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
     </div>
 
     <div class="boxes__wrap">

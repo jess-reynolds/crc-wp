@@ -69,6 +69,10 @@
     display: grid;
     grid-template-areas: "main";
 
+    @media screen and (max-width: $mobile-width) {
+      padding: 1.5rem;
+    }
+
     h1 {
       grid-area: main;
       color: white;
