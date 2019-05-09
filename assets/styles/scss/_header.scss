@@ -42,7 +42,11 @@
     grid-template-columns: 1fr;
     grid-template-rows: min-content min-content;
     text-align: center;
-    margin-top: 6rem;
+    margin: 1rem;
+
+    @media screen and (min-width: $mobile-width-plus-one) {
+      margin: 3rem;
+    }
 
     img {
       margin: 0 auto;

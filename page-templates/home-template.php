@@ -17,8 +17,7 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<div class="home--inside">
 		<div class="home--text">
 			<img
-				src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
-			<h1 class="home__logo">condors</h1>
+				src="<?php bloginfo('template_url'); ?>/assets/images/logo.png" />
 		</div>
 		<div class="home--subtitle">
 			<h3>Oxford's friendliest<br>cycling club!</h3>

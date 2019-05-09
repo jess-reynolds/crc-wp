@@ -3,7 +3,7 @@
 h1 {
   margin: 2rem 0;
   font-family: "Work Sans", sans-serif;
-  font-size: 5rem;
+  font-size: 4rem;
   line-height: 0.9em;
   font-weight: 800;
   letter-spacing: -0.05rem;
@@ -11,7 +11,7 @@ h1 {
   text-align: center;
 
   @media screen and (max-width: $mobile-width) {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   &.condensed {
