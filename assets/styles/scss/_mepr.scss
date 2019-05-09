@@ -69,4 +69,28 @@
       }
     }
   }
+
+  &-nav {
+    &-item {
+      margin: 0.5rem;
+      color: black;
+
+      &.mepr-active-nav-tab {
+        a {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+#mepr-account-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.mp_wrapper,
+.members_area {
+  margin: 1.5rem 1.5rem 3rem 1.5rem;
 }

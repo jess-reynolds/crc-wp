@@ -79,6 +79,7 @@
 
   &__offcanvas {
     @mixin item {
+      margin: 0;
       padding: 0.4rem 0;
 
       a {

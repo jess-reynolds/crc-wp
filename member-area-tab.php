@@ -16,13 +16,16 @@ function mepr_add_member_area_content($action)
 {
     if ($action == 'member-area'):
         $query = new WP_Query(array( 'page_id' => get_option('members_area_page_id') ));
-    if ($query->have_posts()) {
-        while ($query->have_posts()) {
-            $query->the_post();
-            the_content();
-        }
-        wp_reset_postdata();
-    }
+    if ($query->have_posts()):
+        while ($query->have_posts()):
+            $query->the_post(); ?>
+<div class="members_area">
+    <?php the_content(); ?>
+</div>
+<?php
+    endwhile;
+    wp_reset_postdata();
+    endif;
     endif;
 }
 
