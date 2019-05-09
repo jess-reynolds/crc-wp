@@ -12,11 +12,9 @@ get_header(); ?>
 		<?php get_template_part('parts/nav', 'topbar'); ?>
 	</div>
 	<div class="header--inside">
-		<div class="header--text">
-			<h1>
-				<?php the_title() ?>
-			</h1>
-		</div>
+		<h1>
+			<?php the_title() ?>
+		</h1>
 	</div>
 </section>
 <div class="layout__contents">
