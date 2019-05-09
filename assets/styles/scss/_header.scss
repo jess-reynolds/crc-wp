@@ -65,10 +65,23 @@
   }
 
   &--image {
+    padding: 3rem;
+    display: grid;
+    grid-template-areas: "main";
+
+    h1 {
+      grid-area: main;
+      color: white;
+      margin: auto;
+      z-index: 1;
+    }
+
     img {
+      grid-area: main;
       width: 100vw;
       height: 40vh;
       object-fit: cover;
+      filter: brightness(0.75);
     }
   }
 }
