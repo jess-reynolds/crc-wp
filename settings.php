@@ -32,6 +32,14 @@ function display_join_url_element()
 <?php
 }
 
+function display_contact_url()
+{
+    ?>
+<input type="text" name="contact_url" id="contact_url"
+    value="<?php echo get_option('contact_url'); ?>" />
+<?php
+}
+
 function display_members_area_page_id_element()
 {
     ?>
@@ -45,10 +53,12 @@ function display_theme_panel_fields()
     add_settings_section("section", "All Settings", null, $section);
     
     add_settings_field("join_url", "Join URL", "display_join_url_element", $section, "section");
+    add_settings_field("contact_url", "Contact URL", "display_contact_url", $section, "section");
     add_settings_field("members_area_page_id", "Members area page ID", "display_members_area_page_id_element", $section, "section");
     
     register_setting("section", "members_area_page_id");
     register_setting("section", "join_url");
+    register_setting("section", "contact_url");
 }
 
 add_action("admin_init", "display_theme_panel_fields");
