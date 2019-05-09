@@ -32,12 +32,22 @@ function display_join_url_element()
 <?php
 }
 
+function display_members_area_page_id_element()
+{
+    ?>
+<input type="text" name="members_area_page_id" id="members_area_page_id"
+    value="<?php echo get_option('members_area_page_id'); ?>" />
+<?php
+}
+
 function display_theme_panel_fields()
 {
     add_settings_section("section", "All Settings", null, $section);
     
     add_settings_field("join_url", "Join URL", "display_join_url_element", $section, "section");
-
+    add_settings_field("members_area_page_id", "Members area page ID", "display_members_area_page_id_element", $section, "section");
+    
+    register_setting("section", "members_area_page_id");
     register_setting("section", "join_url");
 }
 
