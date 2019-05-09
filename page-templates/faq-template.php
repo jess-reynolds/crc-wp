@@ -33,14 +33,6 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
     }
 </script>
 
-<div class="faq__head--wrap">
-    <div class="faq__head--hill">
-        <img class="faq__head--bike"
-            src="<?php bloginfo('template_url'); ?>/assets/images/bike.png" />
-    </div>
-
-</div>
-
 <section class="header--container faq__head--container">
     <div class="header--header">
         <?php get_template_part('parts/nav', 'topbar'); ?>
@@ -64,8 +56,6 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
         <p class="prose">
             <?php echo get_post_meta($post->ID, "faq_intro", true); ?>
         </p>
-        <img title="Home"
-            src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
     </div>
 </div>
 
@@ -76,33 +66,22 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
     <?php
     $questions = get_post_meta($post->ID, "faq_faq", true);
-    foreach ((array) $questions as $key => $entry) {
-        $question = $answer = '';
-        if (isset($entry['question'])) {
-            $question = $entry['question'];
-        }
-        
-        if (isset($entry['answer'])) {
-            $answer = $entry['answer'];
-        } ?>
-
-
+    foreach ((array) $questions as $key => $entry): ?>
     <div class="faq__question--container">
         <div class="faq__question--q" onclick="faq_click(event)">
-            <h2>
-                <?php echo $question; ?>
-            </h2>
+            <h3>
+                <?php echo $entry['question']; ?>
+            </h3>
             <span class="icon">+</span>
         </div>
         <div class="faq__question--a">
             <p class="prose">
-                <?php echo $answer; ?>
+                <?php echo $entry['answer']; ?>
             </p>
         </div>
     </div>
 
-    <?php
-    } ?>
+    <?php endforeach; ?>
 </div>
 
 
