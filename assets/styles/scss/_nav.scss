@@ -7,14 +7,6 @@
     list-style-type: none;
     margin: 0;
     flex-grow: 1;
-
-    li {
-      border-right: 1px solid white;
-    }
-
-    li:last-child {
-      border: none;
-    }
   }
 
   &__bar {
@@ -28,7 +20,7 @@
       a {
         color: white;
         font-family: "Work Sans", sans-serif;
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: 500;
         letter-spacing: 0rem;
         white-space: nowrap;
@@ -65,7 +57,7 @@
         a {
           color: white;
           font-family: "Work Sans", sans-serif;
-          font-size: 1.1rem;
+          font-size: 1rem;
           font-weight: 500;
           letter-spacing: 0rem;
           white-space: nowrap;
