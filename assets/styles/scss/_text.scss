@@ -69,9 +69,13 @@ h4 {
   }
 }
 
-@mixin prose {
+@mixin p {
+  margin: 1rem 0;
+  font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 1rem;
   line-height: 1.8rem;
+  color: $dark;
+  word-wrap: break-word;
 
   @media screen and (max-width: $mobile-width) {
     font-size: 0.8rem;
@@ -79,31 +83,8 @@ h4 {
   }
 }
 
-@mixin p {
-  margin: 1rem 0;
-  font-family: Georgia, Times, "Times New Roman", serif;
-  font-size: 0.9rem;
-  line-height: 1.6rem;
-  color: $dark;
-  word-wrap: break-word;
-
-  @media screen and (max-width: $mobile-width) {
-    font-size: 0.8rem;
-  }
-
-  &.prose {
-    @include prose;
-  }
-}
-
 p {
   @include p;
-}
-
-.prose {
-  p {
-    @include prose;
-  }
 }
 
 hr {

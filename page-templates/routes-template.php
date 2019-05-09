@@ -32,7 +32,7 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <div class="layout__thin">
     <div class="faq__intro">
-        <p class="prose">
+        <p>
             <?php echo get_post_meta($post->ID, "people_intro", true); ?>
         </p>
     </div>

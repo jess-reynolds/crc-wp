@@ -25,7 +25,7 @@ get_header(); ?>
 		<?php the_date(); ?>
 	</p>
 
-	<div class="single__content prose">
+	<div class="single__content">
 		<?php the_content(); ?>
 	</div>
 </div>
