@@ -46,10 +46,15 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
     </div>
 </section>
 
+<?php $img = get_post_meta($post->ID, "faq_image", true);
+if ($img != ""): ?>
+
 <div class="faq__head--image">
     <img
         src="<?php echo get_post_meta($post->ID, "faq_image", true) ?>">
 </div>
+
+<?php endif; ?>
 
 <div class="layout__thin">
     <div class="faq__intro">
