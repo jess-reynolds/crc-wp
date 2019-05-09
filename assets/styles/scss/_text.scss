@@ -50,6 +50,21 @@ h3 {
   }
 }
 
+h4 {
+  margin: 0.8rem 0;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1em;
+  letter-spacing: -0.01rem;
+  text-transform: uppercase;
+  color: $dark;
+
+  @media screen and (max-width: $mobile-width) {
+    font-size: 0.9rem;
+  }
+}
+
 @mixin prose {
   font-size: 1.1rem;
   line-height: 2em;

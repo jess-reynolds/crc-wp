@@ -72,3 +72,8 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 <?php endforeach; endwhile; endif;
 get_template_part('parts/content', 'join');
 get_footer();
+
+?>
+<a href="http://google.com" class="home__popper">
+	<h4><i class="fas fa-comment"></i>&nbsp; Contact us!</h4>
+</a>
