@@ -35,8 +35,6 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
         <p class="prose">
             <?php echo get_post_meta($post->ID, "people_intro", true); ?>
         </p>
-        <img title="Home"
-            src="<?php bloginfo('template_url'); ?>/assets/images/icon-club.png" />
     </div>
 </div>
 
