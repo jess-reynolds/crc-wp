@@ -71,10 +71,11 @@ h4 {
 
 @mixin prose {
   font-size: 1rem;
-  line-height: 1.9em;
+  line-height: 1.8rem;
 
   @media screen and (max-width: $mobile-width) {
     font-size: 0.8rem;
+    line-height: 1.6rem;
   }
 }
 
@@ -82,7 +83,7 @@ h4 {
   margin: 1rem 0;
   font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 0.9rem;
-  line-height: 1.4em;
+  line-height: 1.6rem;
   color: $dark;
   word-wrap: break-word;
 
@@ -106,7 +107,7 @@ p {
 }
 
 hr {
-  margin: 4rem 0;
+  margin: 2rem 0;
 }
 
 td {
