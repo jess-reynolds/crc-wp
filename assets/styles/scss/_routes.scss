@@ -50,7 +50,7 @@
 
   &--body {
     width: 100%;
-    margin: 4rem;
+    margin: 3rem;
 
     h3 {
       margin: 0;
@@ -61,7 +61,8 @@
     }
 
     @media screen and (max-width: $mobile-width) {
-      margin: 2rem;
+      margin: 0;
+      padding: 2rem;
       display: flex;
       flex-direction: column;
     }

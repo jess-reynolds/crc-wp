@@ -30,45 +30,46 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
         </p>
     </div>
 </div>
+<div class="layout__thin no-pad">
+    <div class="routes--wrap">
 
-<div class="routes--wrap">
+        <?php
+        $routes = get_post_meta($post->ID, "routes_routes", true);
+        foreach ((array) $routes as $key => $entry): ?>
 
-    <?php
-    $routes = get_post_meta($post->ID, "routes_routes", true);
-    foreach ((array) $routes as $key => $entry): ?>
-
-    <div class="routes--container">
-        <div class="routes--body">
-            <h3>
-                <?php echo $entry['name'] ?>
-            </h3>
-            <ul class="routes__files">
-                <?php if ($entry['strava'] != ""): ?>
-                <li>
-                    <a href=<?php echo $entry['strava'] ?>>Strava</a>
-                </li>
-                <?php endif; if ($entry['gpx'] != ""): ?>
-                <li>
-                    <a href=<?php echo $entry['gpx'] ?>>GPX</a>
-                </li>
-                <?php endif; if ($entry['tcx'] != ""): ?>
-                <li>
-                    <a href=<?php echo $entry['tcx'] ?>>TCX</a>
-                </li>
-                <?php endif; if ($entry['pdf'] != ""): ?>
-                <li>
-                    <a href=<?php echo $entry['pdf'] ?>>Route
-                        sheet</a>
-                </li>
-                <?php endif; ?>
-            </ul>
-            <p>
-                <?php echo $entry['description'] ?>
-            </p>
+        <div class="routes--container">
+            <div class="routes--body">
+                <h3>
+                    <?php echo $entry['name'] ?>
+                </h3>
+                <ul class="routes__files">
+                    <?php if ($entry['strava'] != ""): ?>
+                    <li>
+                        <a href=<?php echo $entry['strava'] ?>>Strava</a>
+                    </li>
+                    <?php endif; if ($entry['gpx'] != ""): ?>
+                    <li>
+                        <a href=<?php echo $entry['gpx'] ?>>GPX</a>
+                    </li>
+                    <?php endif; if ($entry['tcx'] != ""): ?>
+                    <li>
+                        <a href=<?php echo $entry['tcx'] ?>>TCX</a>
+                    </li>
+                    <?php endif; if ($entry['pdf'] != ""): ?>
+                    <li>
+                        <a href=<?php echo $entry['pdf'] ?>>Route
+                            sheet</a>
+                    </li>
+                    <?php endif; ?>
+                </ul>
+                <p>
+                    <?php echo $entry['description'] ?>
+                </p>
+            </div>
         </div>
-    </div>
 
-    <?php endforeach; ?>
+        <?php endforeach; ?>
+    </div>
 </div>
 
 
