@@ -37,57 +37,48 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
     <div class="header--header">
         <?php get_template_part('parts/nav', 'topbar'); ?>
     </div>
-    <div class="header--inside">
-        <div class="header--text">
-            <h1>
-                <?php the_title(); ?>
-            </h1>
-        </div>
-    </div>
 </section>
 
-<?php $img = get_post_meta($post->ID, "faq_image", true);
-if ($img != ""): ?>
-
-<div class="faq__head--image">
+<div class="header--image">
     <img
-        src="<?php echo get_post_meta($post->ID, "faq_image", true) ?>">
+        src="<?php echo get_post_meta($post->ID, "faq_image", true); ?>">
+    <h1>
+        <?php the_title(); ?>
+    </h1>
 </div>
-
-<?php endif; ?>
 
 <div class="layout__thin no-pad">
     <div class="faq__intro">
-        <p >
+        <p>
             <?php echo get_post_meta($post->ID, "faq_intro", true); ?>
         </p>
     </div>
 
 
-<div class="faq__question--wrap">
-    <div class="faq__expand" onclick="faq_expand()">
-        <span>Expand all</span>
-    </div>
+    <div class="faq__question--wrap">
+        <div class="faq__expand" onclick="faq_expand()">
+            <span>Expand all</span>
+        </div>
 
-    <?php
+        <?php
     $questions = get_post_meta($post->ID, "faq_faq", true);
     foreach ((array) $questions as $key => $entry): ?>
-    <div class="faq__question--container">
-        <div class="faq__question--q" onclick="faq_click(event)">
-            <h3>
-                <?php echo $entry['question']; ?>
-            </h3>
-            <span class="icon">+</span>
+        <div class="faq__question--container">
+            <div class="faq__question--q" onclick="faq_click(event)">
+                <h3>
+                    <?php echo $entry['question']; ?>
+                </h3>
+                <span class="icon">+</span>
+            </div>
+            <div class="faq__question--a">
+                <p>
+                    <?php echo $entry['answer']; ?>
+                </p>
+            </div>
         </div>
-        <div class="faq__question--a">
-            <p>
-                <?php echo $entry['answer']; ?>
-            </p>
-        </div>
-    </div>
 
-    <?php endforeach; ?>
-</div>
+        <?php endforeach; ?>
+    </div>
 </div>
 
 
