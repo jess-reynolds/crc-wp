@@ -32,7 +32,7 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<?php echo get_post_meta($post->ID, "home_headline", true); ?>
 			</h2>
 		</div>
-		<p class="prose">
+		<p>
 			<?php echo get_post_meta($post->ID, "home_intro", true); ?>
 		</p>
 		<a type="button" class="button red button__ride"

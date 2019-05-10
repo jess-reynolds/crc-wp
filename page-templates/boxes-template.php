@@ -40,31 +40,32 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
         } else {
             $link = get_permalink($entry['link'][0]);
         } ?>
+            <div class="boxes__box--wrap">
+                <div class="boxes__box--container">
+                    <a href="<?php echo $link ?>">
+                        <img class="boxes__box--image"
+                            src="<?php echo $entry['image'] ?>" />
+                    </a>
 
-            <div class="boxes__box--container">
-                <a href="<?php echo $link ?>">
-                    <img class="boxes__box--image"
-                        src="<?php echo $entry['image'] ?>" />
-                </a>
+                    <div class="boxes__box--title">
+                        <h3>
+                            <a class="boxes__box--title-a"
+                                href="<?php echo $link ?>">
+                                <?php echo $entry['title'] ?>
+                            </a>
+                        </h3>
+                    </div>
 
-                <div class="boxes__box--title">
-                    <h3>
-                        <a class="boxes__box--title-a"
-                            href="<?php echo $link ?>">
-                            <?php echo $entry['title'] ?>
-                        </a>
-                    </h3>
+                    <div class="boxes__box--text">
+                        <p>
+                            <?php echo $entry['blurb'] ?>
+                        </p>
+                    </div>
+                    <a class="boxes__box--link link"
+                        href="<?php echo $link ?>">Read
+                        more</a>
+
                 </div>
-
-                <div class="boxes__box--text">
-                    <p>
-                        <?php echo $entry['blurb'] ?>
-                    </p>
-                </div>
-                <a class="boxes__box--link link"
-                    href="<?php echo $link ?>">Read
-                    more</a>
-
             </div>
             <?php
     } ?>

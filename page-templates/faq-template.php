@@ -58,7 +58,7 @@ if ($img != ""): ?>
 
 <div class="layout__thin">
     <div class="faq__intro">
-        <p class="prose">
+        <p >
             <?php echo get_post_meta($post->ID, "faq_intro", true); ?>
         </p>
     </div>
@@ -80,7 +80,7 @@ if ($img != ""): ?>
             <span class="icon">+</span>
         </div>
         <div class="faq__question--a">
-            <p class="prose">
+            <p>
                 <?php echo $entry['answer']; ?>
             </p>
         </div>

@@ -28,10 +28,13 @@
   }
 
   &__box {
-    &--container {
-      padding: 1.5rem;
-      height: 100%;
+    &--wrap {
       border-left: 1px solid #ddd;
+    }
+
+    &--container {
+      margin: 1.5rem;
+      height: 100%;
     }
 
     &--image {
@@ -50,11 +53,6 @@
       &-a {
         color: $dark;
       }
-    }
-
-    &--link {
-      padding-top: 0.5rem;
-      text-align: left !important;
     }
   }
 }
