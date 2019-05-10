@@ -17,7 +17,7 @@
 
   &__container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
     row-gap: 5rem;
     margin-left: -1px;
   }
@@ -28,13 +28,10 @@
   }
 
   &__box {
-    &--wrap {
-      border-left: 1px solid #ddd;
-    }
-
     &--container {
-      margin: 1.5rem;
+      padding: 1.5rem;
       height: 100%;
+      border-left: 1px solid #ddd;
     }
 
     &--image {
@@ -53,6 +50,11 @@
       &-a {
         color: $dark;
       }
+    }
+
+    &--link {
+      padding-top: 0.5rem;
+      text-align: left !important;
     }
   }
 }
