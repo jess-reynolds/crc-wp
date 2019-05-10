@@ -23,7 +23,7 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
     </h1>
 </div>
 
-<div class="layout__thin">
+<div class="layout__thin no-pad">
     <div class="boxes__intro">
         <p>
             <?php echo get_post_meta($post->ID, "boxes_intro", true); ?>

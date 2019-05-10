@@ -10,18 +10,23 @@
 get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <section class="home--container pink"
-	style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 64, 170, 0.72)), linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url('<?php echo get_post_meta($post->ID, "home_hero", true); ?>')">
+	style="background-image: linear-gradient(rgba(255, 0, 0, 0.5), rgba(255, 64, 170, 0.72)), linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url('<?php echo get_post_meta($post->ID, "home_hero", true); ?>')">
 	<div class="home--header">
 		<?php get_template_part('parts/nav', 'topbar'); ?>
 	</div>
 	<div class="home--inside">
+
+		<!--
 		<div class="home--text">
 			<img
-				src="<?php bloginfo('template_url'); ?>/assets/images/logo.png" />
-		</div>
-		<div class="home--subtitle">
-			<h3>Oxford's friendliest<br>cycling club!</h3>
-		</div>
+				src="<?php bloginfo('template_url'); ?>/assets/images/logo.png"
+		/>
+	</div>
+	-->
+
+	<div class="home--subtitle">
+		<h3>Oxford's<br>friendliest<br>cycling club!</h3>
+	</div>
 	</div>
 </section>
 

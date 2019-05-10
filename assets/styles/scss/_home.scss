@@ -26,6 +26,7 @@
   &--inside {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -36,10 +37,11 @@
     grid-template-rows: min-content min-content;
     text-align: center;
     padding: 0 1rem;
+    height: 15vh;
 
     img {
       margin: 0 auto;
-      width: 70%;
+      height: 100%;
     }
 
     h1 {
@@ -49,11 +51,13 @@
   }
 
   &--subtitle {
+    align-self: start;
+    padding: 2rem;
+
     h3 {
       color: white;
+      font-size: 12vw;
     }
-
-    padding: 2rem;
   }
 
   &__logo {

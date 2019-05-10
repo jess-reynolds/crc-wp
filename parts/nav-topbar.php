@@ -4,7 +4,7 @@
 			<div class="menu-item">
 				<a href="<?php echo get_home_url() ?>">
 					<img title="Home"
-						src="<?php echo get_bloginfo('template_url') ?>/assets/images/icon-club.png" />
+						src="<?php echo get_bloginfo('template_url') ?>/assets/images/Condors_V2_WHITE.png" />
 				</a>
 			</div>
 		</div>
@@ -32,7 +32,7 @@
 		<div class="menu-item">
 			<a href="<?php echo get_home_url() ?>">
 				<img title="Home"
-					src="<?php echo get_bloginfo('template_url') ?>/assets/images/icon-club.png" />
+					src="<?php echo get_bloginfo('template_url') ?>/assets/images/Condors_V2_WHITE.png" />
 			</a>
 		</div>
 		<div class="menu-item" onclick="hamburgerClick()">
