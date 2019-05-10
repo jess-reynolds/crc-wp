@@ -47,8 +47,8 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post();
     </div>
 
 
-    <div class="layout__thin">
-        <div class="join__intro">
+    <div class="layout__thin no-pad">
+        <div class="faq__intro">
             <p>
                 <?php echo get_post_meta($post->ID, "join_intro", true); ?>
             </p>
@@ -75,4 +75,6 @@ $products = $group->products();
         </div>
     </div>
 
-    <?php endwhile; endif; get_footer();
+    <?php endwhile; endif; ?>
+</div>
+<?php get_footer();
