@@ -47,14 +47,14 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
     </h1>
 </div>
 
-<div class="layout__thin no-pad">
+<div class="layout__thin">
     <div class="faq__intro">
         <p>
             <?php echo get_post_meta($post->ID, "faq_intro", true); ?>
         </p>
     </div>
-
-
+</div>
+<div class="layout__thin no-pad">
     <div class="faq__question--wrap">
         <div class="faq__expand" onclick="faq_expand()">
             <span>Expand all</span>
