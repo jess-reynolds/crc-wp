@@ -15,28 +15,16 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<?php get_template_part('parts/nav', 'topbar'); ?>
 	</div>
 	<div class="home--inside">
-
-		<!--
-		<div class="home--text">
-			<img
-				src="<?php bloginfo('template_url'); ?>/assets/images/logo.png"
-		/>
-	</div>
-	-->
-
-	<div class="home--subtitle">
-		<h3>Oxford's<br>friendliest<br>cycling club!</h3>
-	</div>
+		<div class="home--subtitle">
+			<h3>
+				<?php echo get_post_meta($post->ID, "home_headline", true); ?>
+			</h3>
+		</div>
 	</div>
 </section>
 
 <div class="layout__thin">
 	<div class="home__intro">
-		<div class="home__heading">
-			<h2>
-				<?php echo get_post_meta($post->ID, "home_headline", true); ?>
-			</h2>
-		</div>
 		<p>
 			<?php echo get_post_meta($post->ID, "home_intro", true); ?>
 		</p>

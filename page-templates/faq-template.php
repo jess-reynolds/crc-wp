@@ -56,13 +56,13 @@ if ($img != ""): ?>
 
 <?php endif; ?>
 
-<div class="layout__thin">
+<div class="layout__thin no-pad">
     <div class="faq__intro">
         <p >
             <?php echo get_post_meta($post->ID, "faq_intro", true); ?>
         </p>
     </div>
-</div>
+
 
 <div class="faq__question--wrap">
     <div class="faq__expand" onclick="faq_expand()">
@@ -87,6 +87,7 @@ if ($img != ""): ?>
     </div>
 
     <?php endforeach; ?>
+</div>
 </div>
 
 
