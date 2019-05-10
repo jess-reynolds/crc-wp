@@ -1,5 +1,7 @@
 <?php
 
+global $post;
+
 function mepr_add_member_area_tab($user)
 {
     $support_active = (isset($_GET['action']) && $_GET['action'] == 'member-area')?'mepr-active-nav-tab':''; ?>
@@ -15,10 +17,11 @@ function mepr_add_member_area_tab($user)
 function mepr_add_member_area_content($action)
 {
     if ($action == 'member-area'):
-        $query = new WP_Query(array( 'page_id' => get_option('members_area_page_id') ));
+        $query = new WP_Query(array( 'page_id' => get_option('members_area_page_id')));
     if ($query->have_posts()):
         while ($query->have_posts()):
-            $query->the_post(); ?>
+            $query->the_post();
+    $_COOKIE[ 'wp-postpass_' . COOKIEHASH ] = wp_hash_password(get_post($post)->post_password); ?>
 <div class="members_area">
     <?php the_content(); ?>
 </div>
