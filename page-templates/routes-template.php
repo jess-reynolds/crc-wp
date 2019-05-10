@@ -9,31 +9,24 @@
 
 get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<div class="faq__head--wrap">
-    <div class="faq__head--hill">
-        <img class="faq__head--bike"
-            src="<?php bloginfo('template_url'); ?>/assets/images/bike.png" />
-    </div>
-
-</div>
-
 <section class="header--container faq__head--container">
     <div class="header--header">
         <?php get_template_part('parts/nav', 'topbar'); ?>
     </div>
-    <div class="header--inside">
-        <div class="header--text">
-            <h1>
-                <?php the_title(); ?>
-            </h1>
-        </div>
-    </div>
 </section>
+
+<div class="header--image">
+    <img
+        src="<?php echo get_post_meta($post->ID, "routes_hero", true); ?>">
+    <h1>
+        <?php the_title(); ?>
+    </h1>
+</div>
 
 <div class="layout__thin">
     <div class="faq__intro">
         <p>
-            <?php echo get_post_meta($post->ID, "people_intro", true); ?>
+            <?php echo get_post_meta($post->ID, "routes_intro", true); ?>
         </p>
     </div>
 </div>

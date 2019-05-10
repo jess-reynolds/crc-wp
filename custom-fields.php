@@ -88,6 +88,12 @@ function crc_register_routes_fields()
         'type'       => 'textarea',
     ));
 
+    $fields->add_field(array(
+        'name'       => esc_html__('Hero', 'cmb2'),
+        'id'         => $prefix . 'hero',
+        'type'       => 'file',
+    ));
+
     $group_field_id = $fields->add_field(array(
         'name'       => esc_html__('Routes', 'cmb2'),
         'id'         => $prefix . 'routes',
