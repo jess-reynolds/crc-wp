@@ -156,12 +156,14 @@
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.15);
     position: fixed;
     bottom: 0;
-    right: 10%;
+    right: 5%;
     z-index: 1000;
     background-color: $dark-pink;
-    padding: 0.1rem 0.9rem;
+    padding: 0.2rem 1rem;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
+    border: 1px solid white;
+    border-bottom: none;
 
     h4 {
       color: white;
@@ -173,7 +175,7 @@
 
     @media screen and (max-width: $mobile-width) {
       right: 0;
-      bottom: 10rem;
+      bottom: 8rem;
       transform: rotate(-90deg);
       transform-origin: right bottom;
     }
