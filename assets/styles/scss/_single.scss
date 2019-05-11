@@ -10,6 +10,10 @@
   }
 
   &__content {
+    p {
+      margin: 2rem 0;
+      line-height: 2rem;
+    }
     /*
     display: block;
     max-width: 100rem;
