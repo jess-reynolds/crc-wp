@@ -50,6 +50,7 @@ require_once(get_template_directory().'/custom-fields.php');
 require_once(get_template_directory().'/settings.php');
 require_once(get_template_directory().'/account-tabs.php');
 require_once(get_template_directory().'/member-area-tab.php');
+require_once(get_template_directory().'/woocommerce-tabs.php');
 
 add_action('init', 'register_footer_menu');
 function register_footer_menu()
