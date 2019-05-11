@@ -31,6 +31,10 @@ function mepr_add_tabs_content($action)
         $user = MeprUtils::get_currentuserinfo();
     $active_products = $user->active_product_subscriptions('transactions');
 
+    if (sizeof($active_products) == 0) {
+        echo "You don't have any active memberships!";
+    }
+
     foreach ($active_products as $sub):
     $my_img = imagecreatefrompng(get_template_directory() . "/assets/images/membership-card.png");
     imageAlphaBlending($my_img, true);
