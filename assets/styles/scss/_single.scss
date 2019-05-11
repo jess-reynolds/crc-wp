@@ -10,6 +10,7 @@
   }
 
   &__content {
+    /*
     display: block;
     max-width: 100rem;
     font-family: Georgia, Times, "Times New Roman", serif;
@@ -24,8 +25,8 @@
 
     p {
       padding-bottom: 2rem;
-      max-width: 50rem;
-      margin: auto;
+      //max-width: 50rem;
+      //margin: auto;
     }
 
     img {
@@ -35,5 +36,6 @@
       width: 100%;
       object-fit: contain;
     }
+    */
   }
 }
