@@ -12,6 +12,11 @@
 			<?php wp_nav_menu(array('theme_location' => 'header-menu', 'items_wrap'=> '%3$s', 'container' => false, 'menu_class' => 'nav__container')); ?>
 		</div>
 		<div class="menu-item">
+			<a href="<?php echo WC()->cart->get_cart_url() ?>">
+				Basket (<?php echo WC()->cart->get_cart_contents_count(); ?>)
+			</a>
+		</div>
+		<div class="menu-item">
 			<?php
                 if (is_user_logged_in()) {
                     ?>
