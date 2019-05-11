@@ -84,23 +84,29 @@
 		<div class="nav__offcanvas--wrap">
 			<div class="nav__offcanvas--container">
 				<?php wp_nav_menu(array( 'theme_location' => 'header-menu', 'container' => false, 'menu_class' => 'nav__offcanvas' )); ?>
+
 				<div class="nav__offcanvas--item">
-					<div>
-						<?php
+					<a
+						href="<?php echo WC()->cart->get_cart_url() ?>">
+						Basket (<?php echo WC()->cart->get_cart_contents_count(); ?>)
+					</a>
+				</div>
+
+				<div class="nav__offcanvas--item">
+					<?php
                 if (is_user_logged_in()) {
                     ?>
-						<a
-							href="<?php echo MeprOptions::fetch()->account_page_url(); ?>">My
-							account</a>
-						<?php
+					<a
+						href="<?php echo MeprOptions::fetch()->account_page_url(); ?>">My
+						account</a>
+					<?php
                 } else {
                     ?>
-						<a
-							href="<?php echo MeprOptions::fetch()->login_page_url(); ?>">Sign
-							in</a> <?php
+					<a
+						href="<?php echo MeprOptions::fetch()->login_page_url(); ?>">Sign
+						in</a> <?php
                 }
                 ?>
-					</div>
 				</div>
 				<div class="nav__offcanvas--close" onclick="hamburgerClick()">
 					<i class="fa fa-times"></i>
