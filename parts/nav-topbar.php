@@ -40,8 +40,15 @@
 					src="<?php echo get_bloginfo('template_url') ?>/assets/images/Condors_V2_WHITE.png" />
 			</a>
 		</div>
-		<div class="menu-item" onclick="hamburgerClick()">
-			<i class="fa fa-bars"></i>
+		<div>
+			<div class="menu-item">
+				<a href="<?php echo WC()->cart->get_cart_url() ?>">
+					<i class="fas fa-shopping-basket"></i>
+				</a>
+			</div>
+			<div class="menu-item" onclick="hamburgerClick()">
+				<i class="fa fa-bars"></i>
+			</div>
 		</div>
 	</div>
 </div>
