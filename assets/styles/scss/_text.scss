@@ -87,6 +87,12 @@ p {
   @include p;
 }
 
+blockquote {
+  p {
+    margin: 0 !important;
+  }
+}
+
 hr {
   margin: 3.5rem 0;
 }
