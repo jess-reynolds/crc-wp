@@ -82,8 +82,8 @@
 
     img {
       grid-area: main;
-      width: 100vw;
-      height: 40vh;
+      width: 100%;
+      height: 50vh;
       object-fit: cover;
       filter: brightness(0.7);
     }
