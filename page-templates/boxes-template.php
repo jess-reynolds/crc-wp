@@ -15,7 +15,7 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
     </div>
 </section>
 
-<div class="header--image">
+<div class="header--image" >
     <img
         src="<?php echo get_post_meta($post->ID, "boxes_hero", true); ?>">
     <h1>
