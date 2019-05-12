@@ -9,8 +9,7 @@
  
 get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<section class="home--container pink"
-	style="background-image: linear-gradient(rgba(255, 0, 0, 0.5), rgba(255, 64, 170, 0.72)), linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url('<?php echo get_post_meta($post->ID, "home_hero", true); ?>')">
+<section class="home--container">
 	<div class="home--header">
 		<?php get_template_part('parts/nav', 'topbar'); ?>
 	</div>
@@ -20,6 +19,13 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<?php echo get_post_meta($post->ID, "home_headline", true); ?>
 			</h3>
 		</div>
+	</div>
+	<div class="home--hero--wrap">
+		<div
+			style="background-image: linear-gradient(rgba(255, 0, 0, 0.5), rgba(255, 64, 170, 0.72)), url('<?php echo get_post_meta($post->ID, "home_hero", true); ?>')">
+		</div>
+		<!--<img class="home--hero"
+			src="<?php echo get_post_meta($post->ID, "home_hero", true); ?>">-->
 	</div>
 </section>
 
