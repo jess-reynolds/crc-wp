@@ -30,7 +30,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-blend-mode: multiply;
+        background-blend-mode: multiply, luminosity;
         background-color: transparent;
         background-size: cover;
       }

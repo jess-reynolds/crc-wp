@@ -22,7 +22,7 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
 	</div>
 	<div class="home--hero--wrap">
 		<div
-			style="background-image: linear-gradient(rgba(255, 0, 0, 0.5), rgba(255, 64, 170, 0.72)), url('<?php echo get_post_meta($post->ID, "home_hero", true); ?>')">
+			style="background-image: linear-gradient(rgba(255, 0, 0, 0.5), rgba(255, 64, 170, 0.72)), linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)), url('<?php echo get_post_meta($post->ID, "home_hero", true); ?>')">
 		</div>
 		<!--<img class="home--hero"
 			src="<?php echo get_post_meta($post->ID, "home_hero", true); ?>">-->
