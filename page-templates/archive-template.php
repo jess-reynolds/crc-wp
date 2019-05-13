@@ -20,12 +20,15 @@ get_header(); ?>
 
     <?php
 
-    query_posts('post_type=post&post_status=publish&has_password=false&posts_per_page=24');
+    $query = new WP_Query( array( 'post_type' => 'post',
+    'post_status' => 'publish',
+    'has_password' => false,
+    'posts_per_page' => 24) );
 
     $first = true;
 
     // Start the Loop.
-    while (have_posts()) : the_post();
+    while ($query->have_posts()) : $query->the_post();
     if ($first): ?>
     <div class="archive__header--container">
         <a href="<?php the_permalink() ?>">
@@ -69,9 +72,9 @@ wp_register_script('load-more', get_template_directory_uri() . '/load-more.js', 
 
 wp_localize_script('load-more', 'params', array(
     'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
-    'posts' => json_encode($wp_query->query_vars),
+    'posts' => json_encode($query->query_vars),
     'current_page' => get_query_var('paged') ? get_query_var('paged') : 1,
-    'max_page' => $wp_query->max_num_pages
+    'max_page' => $query->max_num_pages
 ));
 
 wp_enqueue_script('load-more');
