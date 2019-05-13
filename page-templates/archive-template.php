@@ -20,7 +20,7 @@ get_header(); ?>
 
     <?php
 
-    query_posts('post_type=post&post_status=publish&posts_per_page=24');
+    query_posts('post_type=post&post_status=publish&has_password=false&posts_per_page=24');
 
     $first = true;
 
