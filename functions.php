@@ -116,3 +116,15 @@ function my_myme_types($mime_types)
 }
 
 add_filter('upload_mimes', 'my_myme_types', 1, 1);
+
+/*
+ * Add 'data' for based64 enconcoded images for wp_allowed_protocols()
+ * With this, Jetpack Lazy Images will not strip out "data" in the "src" attribute https://github.com/Automattic/jetpack/blob/6.8/modules/lazy-images/lazy-images.php/#L166
+ */
+
+add_filter( 'kses_allowed_protocols', 'htdat_kses_allowed_protocols', 10, 1 );
+               
+function htdat_kses_allowed_protocols( $protocols ) {
+  $protocols[] = 'data';
+  return $protocols;
+}
