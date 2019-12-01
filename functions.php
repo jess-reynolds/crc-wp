@@ -137,3 +137,22 @@ function mytheme_add_woocommerce_support() {
 }
 
 add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+
+
+function woocommerce_product_header() { 
+    
+    // echo '<img class="archive__header--image" src="'.get_the_post_thumbnail_url(null, "full").'" />';
+
+	echo '<h1 class="condensed">'.get_the_title().'</h1>';
+	
+	echo '<div class="single__content layout__thin no-pad">';
+};     
+add_action( 'woocommerce_before_single_product', 'woocommerce_product_header', 15 ); 
+
+function woocommerce_product_footer() { 
+	echo '</div>';
+};     
+add_action( 'woocommerce_after_single_product', 'woocommerce_product_footer', 15 ); 
+
+// Hide the default woocomerce product title
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);

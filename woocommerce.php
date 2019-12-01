@@ -14,9 +14,7 @@ get_header(); ?>
 
 
 <div class="single__wrap">
-    <div class="single__content layout__thin no-pad">
-        <?php woocommerce_content(); ?>
-    </div>
+    <?php woocommerce_content(); ?>
 </div>
 
 <?php get_footer();
