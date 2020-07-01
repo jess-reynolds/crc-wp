@@ -12,7 +12,7 @@
 			<?php wp_nav_menu(array('theme_location' => 'header-menu', 'items_wrap'=> '%3$s', 'container' => false, 'menu_class' => 'nav__container')); ?>
 		</div>
 		<div class="menu-item">
-			<a href="<?php echo WC()->cart->get_cart_url() ?>">
+			<a href="<?php echo wc_get_cart_url() ?>">
 				Basket (<?php echo WC()->cart->get_cart_contents_count(); ?>)
 			</a>
 		</div>
@@ -42,7 +42,7 @@
 		</div>
 		<div>
 			<div class="menu-item">
-				<a href="<?php echo WC()->cart->get_cart_url() ?>">
+				<a href="<?php echo wc_get_cart_url() ?>">
 					<i class="fas fa-shopping-basket"></i>
 				</a>
 			</div>
