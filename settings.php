@@ -1,7 +1,5 @@
 <?php
 
-$section = 'ktfu-settings';
-
 function ktfu_settings_page()
 {
     ?>
@@ -10,7 +8,7 @@ function ktfu_settings_page()
     <form method="post" action="options.php">
         <?php
             settings_fields("section");
-    do_settings_sections($section);
+    do_settings_sections('ktfu-settings');
     submit_button(); ?>
     </form>
 </div>
@@ -50,11 +48,11 @@ function display_members_area_page_id_element()
 
 function display_theme_panel_fields()
 {
-    add_settings_section("section", "All Settings", null, $section);
+    add_settings_section("section", "All Settings", null, 'ktfu-settings');
     
-    add_settings_field("join_url", "Join URL", "display_join_url_element", $section, "section");
-    add_settings_field("contact_url", "Contact URL", "display_contact_url", $section, "section");
-    add_settings_field("members_area_page_id", "Members area page ID", "display_members_area_page_id_element", $section, "section");
+    add_settings_field("join_url", "Join URL", "display_join_url_element", 'ktfu-settings', "section");
+    add_settings_field("contact_url", "Contact URL", "display_contact_url", 'ktfu-settings', "section");
+    add_settings_field("members_area_page_id", "Members area page ID", "display_members_area_page_id_element", 'ktfu-settings', "section");
     
     register_setting("section", "members_area_page_id");
     register_setting("section", "join_url");
