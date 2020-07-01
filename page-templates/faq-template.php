@@ -75,7 +75,7 @@ get_header(); if (have_posts()) : while (have_posts()) : the_post(); ?>
                     <?php echo $entry['answer']; ?>
                 </p>
                 <?php
-                if ($entry['image'] != "") {
+                if (isset($entry['image'])) {
                     ?>
                 <img
                     src="<?php echo $entry['image'] ?>">
