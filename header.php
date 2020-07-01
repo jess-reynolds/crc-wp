@@ -87,7 +87,7 @@
 
 				<div class="nav__offcanvas--item">
 					<a
-						href="<?php echo WC()->cart->get_cart_url() ?>">
+						href="<?php echo wc_get_cart_url() ?>">
 						Basket (<?php echo WC()->cart->get_cart_contents_count(); ?>)
 					</a>
 				</div>
